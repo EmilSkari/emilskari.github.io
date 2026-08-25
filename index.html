@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aktiv og Ung – Aktiviteter for ungdom i helger og ferier.</title>
+<meta name="description" content="Aktiv og Ung tilbyr skreddersydde tilbud til barn og ungdom over hele Østlandet. Positive mestringsopplevelser som verktøy for å skape gode relasjoner. Kontorer i Oslo og Elverum.">
+<link rel="icon" href="/assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/aktivogung.css?v=14">
+<link rel="preload" as="image" href="/assets/img/hero-2400.jpg" imagesrcset="/assets/img/hero-1200.jpg 1200w, /assets/img/hero-2400.jpg 2400w" imagesizes="100vw">
+</head>
+<body>
+
+<a class="skip-link" href="#innhold">Gå til hovedinnhold</a>
+<a class="skip-link" href="#bunn">Gå til sidebunn</a>
+
+<!-- Bølgeformer: fjellrygg / vannlinje. Brukes som clip-path. -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <defs>
+    <clipPath id="bolge-hero" clipPathUnits="objectBoundingBox">
+      <path id="bolge-hero-sti" d="M0,0 H1 V0.885 C0.86,0.845 0.74,0.955 0.6,0.945 C0.46,0.935 0.34,0.855 0.2,0.885 C0.12,0.902 0.06,0.945 0,0.93 Z">
+        <animate attributeName="d" dur="17s" repeatCount="indefinite"
+          values="M0,0 H1 V0.885 C0.86,0.845 0.74,0.955 0.6,0.945 C0.46,0.935 0.34,0.855 0.2,0.885 C0.12,0.902 0.06,0.945 0,0.93 Z;
+                  M0,0 H1 V0.935 C0.86,0.955 0.74,0.855 0.6,0.885 C0.46,0.915 0.34,0.955 0.2,0.935 C0.12,0.923 0.06,0.875 0,0.895 Z;
+                  M0,0 H1 V0.885 C0.86,0.845 0.74,0.955 0.6,0.945 C0.46,0.935 0.34,0.855 0.2,0.885 C0.12,0.902 0.06,0.945 0,0.93 Z"
+          calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </path>
+    </clipPath>
+    <clipPath id="bolge-hero-m" clipPathUnits="objectBoundingBox">
+      <path d="M0,0 H1 V0.948 C0.86,0.930 0.74,0.978 0.6,0.974 C0.46,0.970 0.34,0.936 0.2,0.948 C0.12,0.955 0.06,0.974 0,0.967 Z">
+        <animate attributeName="d" dur="17s" repeatCount="indefinite"
+          values="M0,0 H1 V0.948 C0.86,0.930 0.74,0.978 0.6,0.974 C0.46,0.970 0.34,0.936 0.2,0.948 C0.12,0.955 0.06,0.974 0,0.967 Z;
+                  M0,0 H1 V0.970 C0.86,0.978 0.74,0.936 0.6,0.948 C0.46,0.960 0.34,0.978 0.2,0.970 C0.12,0.965 0.06,0.944 0,0.952 Z;
+                  M0,0 H1 V0.948 C0.86,0.930 0.74,0.978 0.6,0.974 C0.46,0.970 0.34,0.936 0.2,0.948 C0.12,0.955 0.06,0.974 0,0.967 Z"
+          calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </path>
+    </clipPath>
+    <clipPath id="bolge-topp" clipPathUnits="objectBoundingBox">
+      <path d="M0,0.09 C0.14,0.02 0.3,0.11 0.46,0.075 C0.64,0.035 0.82,0.005 1,0.055 V1 H0 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+<!-- ======================================================================
+     HERO
+     ====================================================================== -->
+<header class="hero">
+  <div class="hero__ramme">
+
+    <div class="hero__bilde">
+      <img src="/assets/img/hero-2400.jpg"
+           srcset="/assets/img/hero-1200.jpg 1200w, /assets/img/hero-2400.jpg 2400w"
+           sizes="100vw" width="2400" height="1600"
+           alt="Ungdom i rød jakke står mellom furustammer og ser utover fjorden en høstdag."
+           fetchpriority="high" decoding="async">
+    </div>
+
+    <svg class="hero__linje" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
+      <path class="linje-liten" d="M1,0.948 C0.86,0.930 0.74,0.978 0.6,0.974 C0.46,0.970 0.34,0.936 0.2,0.948 C0.12,0.955 0.06,0.974 0,0.967">
+        <animate attributeName="d" dur="17s" repeatCount="indefinite"
+          values="M1,0.948 C0.86,0.930 0.74,0.978 0.6,0.974 C0.46,0.970 0.34,0.936 0.2,0.948 C0.12,0.955 0.06,0.974 0,0.967;
+                  M1,0.970 C0.86,0.978 0.74,0.936 0.6,0.948 C0.46,0.960 0.34,0.978 0.2,0.970 C0.12,0.965 0.06,0.944 0,0.952;
+                  M1,0.948 C0.86,0.930 0.74,0.978 0.6,0.974 C0.46,0.970 0.34,0.936 0.2,0.948 C0.12,0.955 0.06,0.974 0,0.967"
+          calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </path>
+      <path class="linje-stor" d="M1,0.885 C0.86,0.845 0.74,0.955 0.6,0.945 C0.46,0.935 0.34,0.855 0.2,0.885 C0.12,0.902 0.06,0.945 0,0.93">
+        <animate attributeName="d" dur="17s" repeatCount="indefinite"
+          values="M1,0.885 C0.86,0.845 0.74,0.955 0.6,0.945 C0.46,0.935 0.34,0.855 0.2,0.885 C0.12,0.902 0.06,0.945 0,0.93;
+                  M1,0.935 C0.86,0.955 0.74,0.855 0.6,0.885 C0.46,0.915 0.34,0.955 0.2,0.935 C0.12,0.923 0.06,0.875 0,0.895;
+                  M1,0.885 C0.86,0.845 0.74,0.955 0.6,0.945 C0.46,0.935 0.34,0.855 0.2,0.885 C0.12,0.902 0.06,0.945 0,0.93"
+          calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </path>
+    </svg>
+
+    <!-- topplinje -->
+    <div class="topp">
+      <a class="merke" href="/" aria-label="Aktiv og Ung – til forsiden">
+        <img src="/assets/img/logo-hvit.png" width="900" height="342" alt="Aktiv og Ung">
+      </a>
+
+      <nav class="meny" id="meny" aria-label="Hovedmeny">
+        <div class="fall" data-fall>
+          <button type="button" aria-expanded="false" aria-controls="tjeneste-meny">
+            Tjenester
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M1.5 4L6 8l4.5-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+          <div class="fall__panel" id="tjeneste-meny">
+            <a href="/velferdsetaten-oslo/">Velferdsetaten Oslo</a>
+            <a href="/aktivitetshelger-2/">Aktivitetshelger</a>
+            <a href="/etter-skoletid/">Etter skoletid</a>
+            <a href="/heldognsomsorg/">Heldøgnomsorg</a>
+            <a href="/11-21/">Avlastning helg/ferie</a>
+            <a href="/ferier/">Ferier</a>
+            <a href="/miljoarbeid/">Miljøarbeid</a>
+            <a href="/institusjon/">Institusjon</a>
+          </div>
+        </div>
+        <a href="/om-oss/">Om oss</a>
+        <a class="kontakt-lenke" href="/kontaktskjema/" target="_blank" rel="noopener">Kontakt oss</a>
+      </nav>
+
+      <button class="meny-bryter" type="button" aria-expanded="false" aria-controls="meny" aria-label="Åpne meny">
+        <span></span>
+      </button>
+    </div>
+
+    <!-- budskap -->
+    <div class="hero__midt">
+      <div class="hero__merke">
+        <svg class="rygg" viewBox="0 0 74 12" aria-hidden="true"><path d="M1 11L14 3l9 6 11-9 10 8 8-4 21 7"/></svg>
+        <p class="stikkord">EST. 1997</p>
+      </div>
+
+      <div class="hero__pute">
+        <h1>Vi skaper trygghet gjennom fellesskap og <em>mestring.</em></h1>
+      </div>
+
+      <p class="hero__under">For barn og unge som trenger støtte i hverdagen.</p>
+
+      <div class="hero__knapper">
+        <a class="knapp knapp--fylt" href="/kontaktskjema/" target="_blank" rel="noopener">
+          Kontakt oss
+          <svg class="pil" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="knapp knapp--hul" href="#tjenester">
+          Våre tjenester
+          <svg class="pil pil--ned" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- fot -->
+    <div class="hero__fot">
+      <div class="hero__pitch">
+        <hr>
+        <p>Aktiv og Ung tilbyr skreddersydde tilbud til barn og unge på Østlandet med fokus på mestring og relasjoner. Vi har kontorer i Oslo og Elverum og kan starte raskt med nye saker.</p>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<main id="innhold">
+
+  <!-- ====================================================================
+       MANIFEST
+       ==================================================================== -->
+  <section class="seksjon manifest">
+    <div class="wrap stig">
+      <svg class="rygg" viewBox="0 0 74 12" aria-hidden="true"><path d="M1 11L14 3l9 6 11-9 10 8 8-4 21 7"/></svg>
+      <p class="stikkord">EST. 1997</p>
+      <p>Aktiv og Ung tilbyr skreddersydde tilbud til barn og ungdom over hele Østlandet. Vårt fokus er positive mestringsopplevelser som et verktøy for å skape gode relasjoner. Vi har kontorer i Oslo og Elverum og har mulighet til å sette i gang med nye saker fortløpende.</p>
+      <div class="knapper">
+        <a class="knapp knapp--fylt" href="/kontaktskjema/" target="_blank" rel="noopener">Kontakt oss</a>
+        <a class="knapp knapp--hul" href="#tjenester">Våre tjenester</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       TJENESTER
+       ==================================================================== -->
+  <section class="seksjon" id="tjenester">
+    <div class="wrap">
+      <div class="seksjon__topp tj-intro stig">
+        <div>
+          <svg class="rygg" viewBox="0 0 74 12" aria-hidden="true"><path d="M1 11L14 3l9 6 11-9 10 8 8-4 21 7"/></svg>
+          <h2 class="stor">Tjenester</h2>
+        </div>
+      </div>
+
+      <div class="rutenett stig">
+
+        <a class="kort" href="/institusjon/">
+          <div class="kort__bilde"><img src="/assets/img/instituasjon.png" width="900" height="900" loading="lazy" decoding="async" alt="Låven, omsorgsinstitusjonen i Elverum, opplyst i skumringen."></div>
+          <div class="kort__tekst">
+            <h3>Institusjon</h3>
+            <p>Låven er en omsorgsinstitusjon i Elverum for ungdom med behov for oppfølging, struktur og forutsigbarhet</p>
+            <span class="kort__les">Les mer <svg class="pil" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+
+        <a class="kort" href="/velferdsetaten-oslo/">
+          <div class="kort__bilde"><img src="/wp-content/uploads/2025/09/Screenshot-2025-09-15-at-18.13.47.png" width="900" height="900" loading="lazy" decoding="async" alt="To personer padler rafteflåte nedover en elv omgitt av skog."></div>
+          <div class="kort__tekst">
+            <h3>Velferdsetaten Oslo</h3>
+            <p>Boligavlastning, Avlastning uten overnatting, Gruppeavlastning</p>
+            <span class="kort__les">Les mer <svg class="pil" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+
+        <a class="kort" href="/aktivitetshelger-2/">
+          <div class="kort__bilde"><img src="/assets/img/tj-velferdsetaten.jpg" width="900" height="900" loading="lazy" decoding="async" alt="Tre ungdommer løper oppover en gresslette med fjell i bakgrunnen."></div>
+          <div class="kort__tekst">
+            <h3>Aktivitetshelger</h3>
+            <p>Aktivitetshelger på Norefjell med faglærte miljøarbeidere og faste grupper</p>
+            <span class="kort__les">Les mer <svg class="pil" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+
+        <a class="kort" href="/etter-skoletid/">
+          <div class="kort__bilde"><img src="/assets/img/tj-etter-skoletid.jpg" width="680" height="680" loading="lazy" decoding="async" alt="Ungdom med hjelm og sele balanserer i klatrepark mellom trærne."></div>
+          <div class="kort__tekst">
+            <h3>Etter skoletid</h3>
+            <p>Etter skoletid tilbud for de som trenger ekstra oppfølging</p>
+            <span class="kort__les">Les mer <svg class="pil" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+
+        <a class="kort" href="/heldognsomsorg/">
+          <div class="kort__bilde"><img src="/assets/img/tj-heldognsomsorg.jpg" width="900" height="900" loading="lazy" decoding="async" alt="En voksen og en ungdom står med armen rundt hverandre ved vannkanten."></div>
+          <div class="kort__tekst">
+            <h3>Heldøgnomsorg</h3>
+            <p>Tett oppfølging i egen bolig – på kort og lang sikt</p>
+            <span class="kort__les">Les mer <svg class="pil" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+
+        <a class="kort" href="/11-21/">
+          <div class="kort__bilde"><img src="/assets/img/tj-avlastning.jpg" width="900" height="900" loading="lazy" decoding="async" alt="To telt satt opp på snødekt vidde under en oransje kveldshimmel."></div>
+          <div class="kort__tekst">
+            <h3>Avlastning helg/ferie</h3>
+            <p>Avlastning i helger eller ferier med tett bemanning 1:1/2:1.</p>
+            <span class="kort__les">Les mer <svg class="pil" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+
+        <a class="kort" href="/ferier/">
+          <div class="kort__bilde"><img src="/assets/img/solnedgang.JPG" width="900" height="900" loading="lazy" decoding="async" alt="Miljøarbeider med kaffekopp sitter og ler sammen med en ungdom ved bordet."></div>
+          <div class="kort__tekst">
+            <h3>Ferier</h3>
+            <p>Små grupper og spennende aktiviteter i skoleferiene</p>
+            <span class="kort__les">Les mer <svg class="pil" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+
+        <a class="kort" href="/miljoarbeid/">
+          <div class="kort__bilde"><img src="/assets/img/tj-ferier.jpg" width="900" height="900" loading="lazy" decoding="async" alt="To stoler og et lite bord foran en trevegg i fellesarealet."></div>
+          <div class="kort__tekst">
+            <h3>Miljøarbeid</h3>
+            <p>Tilpasset miljøarbeid for barn og ungdom</p>
+            <span class="kort__les">Les mer <svg class="pil" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+
+        <a class="kort kort--bred" href="/deltager-foresatt/">
+          <div class="kort__bilde"><img src="/assets/img/deltager.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="To ungdommer strekker armene i været på et utsiktspunkt over dalen."></div>
+          <div class="kort__tekst">
+            <h3>Deltager / Foresatt</h3>
+            <p>Praktisk informasjon for deg som deltar hos oss, og for deg som er foresatt.</p>
+            <span class="kort__les">Les mer <svg class="pil" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       HVEM ER AKTIV OG UNG?
+       ==================================================================== -->
+  <section class="seksjon">
+    <div class="wrap om stig">
+      <div class="om__tekst">
+        <svg class="rygg" viewBox="0 0 74 12" aria-hidden="true"><path d="M1 11L14 3l9 6 11-9 10 8 8-4 21 7"/></svg>
+        <h2 class="stor">Hvem er aktiv og ung?</h2>
+        <p>Aktiv og Ung tilbyr tilrettelagte tjenester for barn og ungdom som trenger ekstra støtte i hverdagen.</p>
+        <p>Vi gir trygg oppfølging, meningsfulle aktiviteter og avlastningstiltak i samarbeid med familier og kommuner på Østlandet.</p>
+        <a class="knapp knapp--fylt" href="/om-oss/">
+          Les mer
+          <svg class="pil" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="om__bilde">
+        <img src="/assets/img/om-oss.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="En voksen og en ungdom står ved vannkanten og peker utover fjorden i høstsol.">
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       HVA ANDRE SIER
+       ==================================================================== -->
+  <section class="seksjon">
+    <div class="wrap">
+      <div class="seksjon__topp stig">
+        <svg class="rygg" viewBox="0 0 74 12" aria-hidden="true"><path d="M1 11L14 3l9 6 11-9 10 8 8-4 21 7"/></svg>
+        <h2 class="stor">Hva andre sier om oss</h2>
+      </div>
+
+      <div class="sitater stig">
+        <figure class="sitat sitat--bred">
+          <div class="sitat__hermetegn" aria-hidden="true">«</div>
+          <h3>"Inspirerte meg til utdannelse"</h3>
+          <blockquote>
+            <p>«Jeg var deltager på Aktiv og Ung i 11 år fra jeg var 9 til 20. Jeg har utrolig mange fine minner fra min tid der. Alt fra aktivitetene til samholdet mellom deltagerne og lederen. Aktiv og Ung var for meg ett avbrekk fra hverdagen, et sted der jeg kunne dra til trygge omgivelser møte venner, få veiledning i livet, mens jeg fikk delta i masse aktiviteter som jeg ellers ikke hadde muligheten til å få vært med på. Tiden min i Aktiv og Ung inspirerte meg til å ta min utdannelse som Barne- og ungdomsarbeider. Den har ført til arbeid med både barn og ungdom noe jeg fortsatt gjør i dag. Jeg ser fortsatt tilbake på tiden min i Aktiv og Ung med glede og ville aldri byttet tiden min der for noe»</p>
+          </blockquote>
+          <figcaption>Marcus – Deltager i 11 år</figcaption>
+        </figure>
+
+        <figure class="sitat">
+          <div class="sitat__hermetegn" aria-hidden="true">«</div>
+          <h3>"Anbefaler på det varmeste!"</h3>
+          <blockquote>
+            <p>«Gjennom Aktiv og ung har sønnen vår fått oppleve så mye spennende og variert – med engasjerte og trygge voksne. Han har fått utfolde seg, brukt kroppen og vist stor glede. Anbefaler på det varmeste!»</p>
+          </blockquote>
+          <figcaption>Mor / Foresatt</figcaption>
+        </figure>
+
+        <figure class="sitat">
+          <div class="sitat__hermetegn" aria-hidden="true">«</div>
+          <h3>"Pålitelig samarbeidspartner"</h3>
+          <blockquote>
+            <p>«Vi har gjennom vårt samarbeid med Aktiv og Ung erfart en tjenesteleverandør som er faglig solid, fleksibel og løsningsorientert. De leverer i henhold til avtalte rammer og viser god forståelse for våre behov.</p>
+            <p>Kommunikasjonen er ryddig og samarbeidet preget av gjensidig respekt og profesjonalitet. Leveransene er punktlige og tilpasset våre forventninger, og vi opplever at de har god kapasitet til å håndtere endringer og behov som oppstår underveis.</p>
+            <p>Aktiv og Ung fremstår som en pålitelig samarbeidspartner, og vi vurderer samarbeidet som svært tilfredsstillende.»</p>
+          </blockquote>
+          <figcaption>Saksbehandler</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       FILM
+       ==================================================================== -->
+  <section class="seksjon seksjon--tett">
+    <div class="wrap stig">
+      <div class="film">
+        <video src="/wp-content/uploads/2025/08/AKTIV-UNG-UTKAST-2.mp4" controls preload="none" poster="/assets/img/film-poster.jpg">
+          <p>Nettleseren din støtter ikke video-taggen.</p>
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       KONTORER
+       ==================================================================== -->
+  <section class="seksjon">
+    <div class="wrap">
+      <div class="kontor-topp stig">
+        <svg class="rygg" viewBox="0 0 74 12" aria-hidden="true"><path d="M1 11L14 3l9 6 11-9 10 8 8-4 21 7"/></svg>
+        <p class="stikkord">Aktiv &amp; Ung</p>
+        <h2 class="stor">Vi har kontor både i Oslo og Innlandet!</h2>
+        <p>Kom å besøk oss for en hyggelig prat eller kaffe</p>
+      </div>
+
+      <div class="kontorer stig">
+        <div class="kontor">
+          <h3>Aktiv og Ung Oslo</h3>
+          <p class="tid">Mandag - Fredag 09-15</p>
+          <a class="adresse" href="https://maps.app.goo.gl/PnzhLcQZ94ZSeLhr8" target="_blank" rel="noopener">Økern Torgvei 3 0580 Oslo</a>
+        </div>
+        <div class="kontor">
+          <h3>Aktiv og Ung Innlandet</h3>
+          <p class="tid">Mandag - Fredag 09-15</p>
+          <a class="adresse" href="https://maps.app.goo.gl/PnzhLcQZ94ZSeLhr8" target="_blank" rel="noopener">Trysilveien 99 2413 Elverum</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       TA KONTAKT
+       ==================================================================== -->
+  <section class="seksjon kontakt">
+    <div class="wrap stig">
+      <svg class="rygg" viewBox="0 0 74 12" aria-hidden="true"><path d="M1 11L14 3l9 6 11-9 10 8 8-4 21 7"/></svg>
+      <h2 class="stor">Ta kontakt med oss!</h2>
+      <p>Har du spørsmål eller tilbakemeldinger? Ta kontakt med oss via e-post eller telefon. Aktiv og Ung behandler alle henvendelser i tråd med gjeldende personvernlovgivning.</p>
+      <a class="knapp knapp--fylt" href="/kontaktskjema/" target="_blank" rel="noopener">
+        Kontaktskjema
+        <svg class="pil" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================================================================
+     BUNN
+     ====================================================================== -->
+<footer class="bunn" id="bunn">
+  <div class="wrap">
+    <div class="bunn__rad">
+
+      <div>
+        <img class="merke-bunn" src="/assets/img/logo-hvit.png" width="900" height="342" loading="lazy" alt="Aktiv og Ung">
+        <p><a href="/om-oss/">Aktiv og Ung har siden 1997 tilrettelagt aktivitetshelger og ferietilbud for barn og ungdom.</a></p>
+        <div class="miljofyrtarn">
+          <img src="/assets/img/miljofyrtarn.png" width="520" height="188" loading="lazy" alt="Miljøfyrtårn – sertifisert virksomhet">
+          <p>Vi er stolte av å være sertifisert som Miljøfyrtårn!<br>
+            <a href="/miljofyrtarn/">Les mer her</a></p>
+        </div>
+      </div>
+
+      <div>
+        <h4>Adresse</h4>
+        <div class="bunn__blokk">
+          <p class="bunn__sted">Oslo</p>
+          <ul><li><a href="https://maps.app.goo.gl/PnzhLcQZ94ZSeLhr8" target="_blank" rel="noopener">Økern Torgvei 3 0580 Oslo</a></li></ul>
+        </div>
+        <div class="bunn__blokk">
+          <p class="bunn__sted">Innlandet</p>
+          <ul><li><a href="https://maps.app.goo.gl/PnzhLcQZ94ZSeLhr8" target="_blank" rel="noopener">Trysilveien 99 2413 Elverum</a></li></ul>
+        </div>
+      </div>
+
+      <div>
+        <h4>Kontakt</h4>
+        <div class="bunn__blokk">
+          <p class="bunn__sted">Oslo</p>
+          <ul>
+            <li><a href="tel:+4722605544">Telefon: 22 60 55 44</a></li>
+            <li><a href="mailto:kontakt@aktivogung.no">Mail: kontakt@aktivogung.no</a></li>
+          </ul>
+        </div>
+        <div class="bunn__blokk">
+          <p class="bunn__sted">Innlandet</p>
+          <ul>
+            <li><a href="tel:+4793439593">Telefon: +47 934 39 593</a></li>
+            <li><a href="mailto:innlandet@aktivogung.no">Mail: innlandet@aktivogung.no</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="bunn__slutt">
+      <p>© 1997–2026 Aktiv og Ung</p>
+      <a class="sosial" href="https://www.facebook.com/aktivogung/" target="_blank" rel="noopener" aria-label="Aktiv og Ung på Facebook">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.2 1.4-1.2H17V2.6c-.3 0-1.2-.1-2.3-.1-2.4 0-4 1.4-4 4V8.5H8V12h2.7v9h3.4v-9h2.7l.4-3.5H14z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduser = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* Bølgene står stille når brukeren ber om mindre bevegelse. */
+  function styrBolger() {
+    document.querySelectorAll('svg').forEach(function (svg) {
+      if (typeof svg.pauseAnimations !== 'function') return;
+      reduser.matches ? svg.pauseAnimations() : svg.unpauseAnimations();
+    });
+  }
+  styrBolger();
+  reduser.addEventListener('change', styrBolger);
+
+  /* Nedtrekksmeny */
+  document.querySelectorAll('[data-fall]').forEach(function (fall) {
+    var knapp = fall.querySelector('button');
+    knapp.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var apen = fall.dataset.apen === 'true';
+      fall.dataset.apen = String(!apen);
+      knapp.setAttribute('aria-expanded', String(!apen));
+    });
+    fall.addEventListener('mouseenter', function () {
+      if (window.innerWidth > 900) { fall.dataset.apen = 'true'; knapp.setAttribute('aria-expanded', 'true'); }
+    });
+    fall.addEventListener('mouseleave', function () {
+      if (window.innerWidth > 900) { fall.dataset.apen = 'false'; knapp.setAttribute('aria-expanded', 'false'); }
+    });
+  });
+  document.addEventListener('click', function () {
+    document.querySelectorAll('[data-fall]').forEach(function (f) {
+      if (window.innerWidth > 900) {
+        f.dataset.apen = 'false';
+        f.querySelector('button').setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  /* Mobilmeny */
+  var bryter = document.querySelector('.meny-bryter');
+  var meny = document.getElementById('meny');
+  bryter.addEventListener('click', function () {
+    var apen = meny.classList.toggle('aapen');
+    document.body.classList.toggle('meny-apen', apen);
+    bryter.setAttribute('aria-expanded', String(apen));
+    bryter.setAttribute('aria-label', apen ? 'Lukk meny' : 'Åpne meny');
+  });
+  meny.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      meny.classList.remove('aapen');
+      document.body.classList.remove('meny-apen');
+      bryter.setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && meny.classList.contains('aapen')) bryter.click();
+  });
+
+  /* Innhold stiger inn ved skroll */
+  var stig = document.querySelectorAll('.stig');
+  if (reduser.matches || !('IntersectionObserver' in window)) {
+    stig.forEach(function (el) { el.classList.add('inne'); });
+  } else {
+    var obs = new IntersectionObserver(function (rader) {
+      rader.forEach(function (rad) {
+        if (rad.isIntersecting) { rad.target.classList.add('inne'); obs.unobserve(rad.target); }
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: .06 });
+    stig.forEach(function (el) { obs.observe(el); });
+  }
+})();
+</script>
+
+</body>
+</html>
