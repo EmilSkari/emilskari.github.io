@@ -301,11 +301,13 @@ body.meny-apen .meny-bryter span::after  { top: 0; transform: rotate(-45deg); }
 .hero__midt {
   position: relative; z-index: 3;
   flex: 1;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
   text-align: center;
-  padding: clamp(28px, 5vw, 60px) clamp(20px, 5vw, 60px);
-  gap: 20px;
+  padding: clamp(8px, 2vw, 20px) clamp(20px, 5vw, 60px) clamp(28px, 5vw, 60px);
+  gap: 18px;
 }
+.hero__midt .hero__merke { margin-top: 0; margin-bottom: -8px; }
+.hero__midt .hero__logo  { margin-bottom: -4px; }
 
 .merkelapp {
   display: inline-flex; align-items: center; gap: 9px;
@@ -336,12 +338,37 @@ body.meny-apen .meny-bryter span::after  { top: 0; transform: rotate(-45deg); }
 }
 .hero h1 em { font-style: normal; color: var(--anorakk); }
 
+.hero__logo {
+  margin: 0;
+  max-width: none;
+  line-height: 0;
+}
+.hero__logo img {
+  width: clamp(280px, 46vw, 620px);
+  height: auto;
+  filter: drop-shadow(0 6px 22px rgba(0,0,0,.45));
+}
+
+.visuelt-skjult {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.hero__skille {
+  width: clamp(240px, 40vw, 560px);
+  height: 0; border: 0; border-top: 1px solid rgba(236,240,234,.5);
+  margin: -12px 0 -10px;
+}
+
 .hero__under {
   font-size: clamp(1.02rem, 1.7vw, 1.32rem);
   color: var(--rim);
-  max-width: 48ch;
+  max-width: 52ch;
+  line-height: 1.6;
   text-shadow: 0 1px 14px rgba(0,0,0,.5);
 }
+.hero__under span { display: block; }
 
 .hero__knapper { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 6px; }
 
