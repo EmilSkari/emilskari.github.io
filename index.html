@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foresight Consulting</title>
+<meta name="description" content="Strategisk finansiell medspiller for ledere som trenger bedre oversikt, tryggere beslutningsgrunnlag og mer handlingsrom.">
+<meta name="theme-color" content="#0e274f">
+<meta property="og:title" content="Foresight Consulting">
+<meta property="og:description" content="Strategisk finansiell medspiller for ledere som trenger bedre oversikt, tryggere beslutningsgrunnlag og mer handlingsrom.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230e274f'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' text-anchor='middle' fill='%23fff'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root {
+  --blue: #1e498b;
+  --ink: #121214;
+  --grey: #66696e;
+  --navy: #0e274f;
+  --navy-deep: #091833;
+  --tint: #ecf1f9;
+  --line: #c7d6eb;
+  --hair: #dee5f2;
+  --sky: #9ebded;
+  --pad: 80px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 400;
+  color: var(--ink);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p, ul { margin: 0; padding: 0; }
+ul { list-style: none; }
+a { color: inherit; text-decoration: none; }
+img { display: block; }
+::selection { background: var(--blue); color: #fff; }
+a:focus-visible, .btn:focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; }
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+section[id] { scroll-margin-top: 76px; }
+
+.wrap { max-width: 1512px; margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
+
+/* shared type */
+.label { font-size: 16px; font-weight: 500; line-height: 1.3; color: var(--blue); }
+.label.light { color: var(--sky); }
+.h2 { font-size: 34px; line-height: 1.15; letter-spacing: -0.02em; font-weight: 400; }
+.lead { font-size: 17px; line-height: 1.55; color: var(--grey); }
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center;
+  padding: 14px 28px;
+  font-size: 16px; font-weight: 500; line-height: 1.3;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.btn-outline { border: 1.5px solid var(--blue); color: var(--blue); }
+.btn-outline:hover { background: var(--blue); color: #fff; }
+.btn-solid { background: var(--blue); color: #fff; padding: 12px 24px; }
+.btn-solid:hover { background: var(--navy); }
+.btn-white { background: #fff; color: var(--navy); }
+.btn-white:hover { background: var(--sky); }
+.arr-hover { display: inline-block; max-width: 0; margin-left: 0; opacity: 0; overflow: hidden; white-space: nowrap; vertical-align: bottom; transition: max-width .3s ease, margin-left .3s ease, opacity .3s ease; }
+.btn:hover .arr-hover, .btn:focus-visible .arr-hover { max-width: 20px; margin-left: 8px; opacity: 1; }
+
+/* hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  min-height: 620px;
+  max-height: 1100px;
+  color: #fff;
+  background: #0b1424;
+  display: flex; align-items: center; justify-content: flex-start;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: -1;
+  background: url("assets/hero2.jpg") 0% 52% / 128% auto no-repeat;
+  filter: contrast(1.05) saturate(.9);
+}
+/* fine grain over the photo */
+.hero::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: .16; mix-blend-mode: overlay;
+}
+.hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to right, rgba(6,12,26,.96) 0%, rgba(8,18,38,.9) 30%, rgba(14,39,79,.42) 52%, rgba(30,73,139,.13) 78%, rgba(30,73,139,.2) 100%),
+    linear-gradient(to bottom, rgba(5,8,14,.72) 0%, rgba(5,8,14,.4) 12%, rgba(5,8,14,0) 28%);
+}
+.bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  color: #fff;
+  border-bottom: 1px solid transparent;
+  transition: background .3s, border-color .3s, backdrop-filter .3s;
+}
+.bar.scrolled {
+  background: rgba(9,24,51,.9);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  border-bottom-color: rgba(255,255,255,.08);
+}
+.nav {
+  max-width: 1512px; margin: 0 auto;
+  height: 114px; padding: 0 var(--pad);
+  display: flex; align-items: center; justify-content: space-between;
+  transition: height .3s;
+}
+.bar.scrolled .nav { height: 76px; }
+.logo { width: 128px; height: 65px; object-fit: cover; }
+.bar.scrolled .logo { width: 108px; height: 55px; }
+.logo { transition: width .3s, height: .3s; }
+.logo.white { filter: brightness(0) invert(1); }
+.nav-links { display: flex; align-items: center; gap: 36px; font-size: 15px; font-weight: 500; line-height: 1.3; }
+.nav-links a:not(.nav-cta) { position: relative; padding: 6px 0; }
+.nav-links a:not(.nav-cta)::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+  background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .25s;
+}
+.nav-links a:not(.nav-cta):hover::after { transform: scaleX(1); }
+.nav-cta {
+  width: 124px; height: 38px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid #fff;
+  transition: background .2s, color .2s;
+}
+.nav-cta:hover { background: #fff; color: var(--navy); }
+.cue { position: absolute; z-index: 1; left: var(--pad); bottom: 28px; width: 1px; height: 56px; background: rgba(255,255,255,.28); overflow: hidden; }
+.cue::after { content: ""; position: absolute; left: 0; top: -20px; width: 1px; height: 20px; background: #fff; animation: cue 2.2s ease-in-out infinite; }
+@keyframes cue { to { transform: translateY(76px); } }
+.hero-body { position: relative; z-index: 1; text-align: left; align-self: center; width: 100%; max-width: 1512px; padding: 0 var(--pad) 170px; }
+.hero h1 { font-size: 52px; font-weight: 500; line-height: 1.1; letter-spacing: -0.025em; max-width: 600px; margin: 0; }
+.hero p { font-size: 19px; line-height: 1.62; width: 540px; max-width: 100%; margin: 24px 0 36px; color: rgba(255,255,255,.88); }
+
+/* tjenester */
+.services { background: var(--tint); padding: 72px 0 80px; }
+.services .intro > * + * { margin-top: 20px; }
+.services h2 { font-size: 46px; }
+.services .lead { max-width: 560px; }
+.situations { margin-top: 56px; }
+.overline {
+  display: block; margin-bottom: 20px;
+  font-size: 14px; font-weight: 500; line-height: 1.3;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--grey);
+}
+.strip { display: flex; border: 1px solid var(--line); background: #fff; }
+.cell { flex: 1; display: flex; flex-direction: column; gap: 14px; padding: 32px; }
+.cell + .cell { border-left: 1px solid var(--line); }
+.cell { transition: background .25s; }
+.services .cell:hover { background: #f7f9fd; }
+.focus .cell:hover { background: rgba(255,255,255,.04); }
+.cell .num { font-size: 14px; font-weight: 500; line-height: 1.3; letter-spacing: .04em; color: var(--blue); }
+.cell h3 { font-size: 20px; font-weight: 500; line-height: 1.3; letter-spacing: -0.01em; }
+.cell p { flex: 1; font-size: 16px; line-height: 25px; color: var(--grey); }
+.more { font-size: 15px; font-weight: 500; line-height: 1.3; color: var(--blue); }
+.arr { display: inline-block; transition: transform .25s; }
+.btn .arr { margin-left: 8px; }
+.more:hover .arr, .btn:hover .arr, .article:hover .arr { transform: translateX(4px); }
+.services .btn { margin-top: 40px; }
+
+/* arbeidsform */
+.method { padding: 72px 0; }
+.method .wrap { display: flex; align-items: stretch; gap: 96px; }
+.method-text { width: 720px; flex: none; }
+.method-text > * + * { margin-top: 20px; }
+.principles { padding-top: 16px; }
+.principles li { display: flex; gap: 14px; padding: 18px 0; font-size: 17px; line-height: 1.5; }
+.principles li:not(:last-child) { border-bottom: 1px solid var(--hair); }
+.principles svg { flex: none; width: 24px; height: 24px; }
+.method .media { position: relative; flex: 1; min-width: 0; }
+.method .media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* fokus */
+.focus { background: var(--navy); padding: 72px 0 88px; }
+.focus .label { margin-bottom: 32px; }
+.focus .strip { background: none; border-color: rgba(255,255,255,.22); }
+.focus .cell { gap: 20px; border-color: rgba(255,255,255,.22); }
+.focus .cell h3 { color: #fff; }
+.focus .cell p { color: rgba(255,255,255,.72); }
+.focus .more { color: var(--sky); }
+.banner-text .more { display: inline-block; color: var(--sky); }
+.banner-text .more:hover { color: #fff; }
+
+/* om oss + team */
+.about-wrap { background: var(--tint); }
+.about { padding: 72px 0 56px; }
+.about .label { margin-bottom: 20px; }
+.about-grid { display: flex; gap: 96px; }
+.about-grid > * { flex: 1; min-width: 0; }
+.about h2 { font-size: 40px; }
+.about .lead { margin-bottom: 28px; }
+.rule { border: 0; border-top: 1px solid #d1def0; margin: 0 auto; max-width: 1352px; }
+.team { padding: 56px 0 88px; }
+.banner { position: relative; height: 420px; background: var(--navy); overflow: hidden; }
+.banner img {
+  position: absolute; top: 0; right: 0;
+  width: 52%; height: 100%;
+  object-fit: cover; object-position: 50% 44%;
+}
+.banner::after {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 44%; width: 12%;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--navy) 35%, rgba(14,39,79,0) 100%);
+}
+.banner-text {
+  position: absolute; z-index: 1; left: 64px; top: 50%; transform: translateY(-50%);
+  width: 500px; max-width: calc(100% - 128px); color: #fff;
+}
+.banner-text > * + * { margin-top: 20px; }
+.banner-text .lead { color: rgba(255,255,255,.82); }
+.people { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; margin-top: 48px; }
+.person { display: block; }
+.photo { position: relative; height: 250px; overflow: hidden; background: #dfe6f2; }
+.photo img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.92); transition: filter .3s, transform .6s cubic-bezier(.2,.7,.3,1); }
+.person:hover .photo img, .person:focus-visible .photo img { filter: saturate(1.05); transform: scale(1.04); }
+.info {
+  position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 12px;
+  padding: 18px 16px; color: #fff;
+  background: linear-gradient(to top, rgba(9,24,51,.96) 0%, rgba(9,24,51,.82) 38%, rgba(9,24,51,.28) 66%, rgba(9,24,51,0) 100%);
+  opacity: 0; transform: translateY(8px);
+  transition: opacity .3s ease, transform .3s ease;
+}
+.info p { font-size: 13px; line-height: 1.5; color: rgba(255,255,255,.88); }
+.info .more { color: var(--sky); }
+.person:hover .info, .person:focus-visible .info { opacity: 1; transform: none; }
+.pmeta { margin-top: 14px; }
+.pname { display: block; font-size: 17px; font-weight: 500; line-height: 1.3; letter-spacing: -0.005em; }
+@media (hover: none) {
+  .person { display: flex; flex-direction: column; }
+  .photo { display: contents; }
+  .photo img { width: 100%; height: 250px; }
+  .pmeta { order: 1; }
+  .info { order: 2; position: static; opacity: 1; transform: none; background: none; padding: 8px 0 0; }
+  .info p { color: var(--grey); }
+  .info .more { color: var(--blue); }
+}
+
+/* innsikt */
+.insights { padding: 88px 0; }
+.insights .label { margin-bottom: 20px; }
+.insights h2 { max-width: 760px; }
+.articles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
+.article { display: flex; flex-direction: column; background: #f6f7f9; transition: box-shadow .3s, transform .3s; }
+.article:hover { box-shadow: 0 18px 40px -22px rgba(14,39,79,.35); }
+.article h3 { transition: color .2s; }
+.article:hover h3 { color: var(--blue); }
+.article .thumb { height: 190px; overflow: hidden; }
+.article-body { flex: 1; display: flex; flex-direction: column; gap: 14px; padding: 32px; }
+.meta { font-size: 13px; font-weight: 500; line-height: 1.3; letter-spacing: .06em; text-transform: uppercase; color: var(--grey); }
+.article h3 { font-size: 20px; font-weight: 400; line-height: 26px; letter-spacing: -0.01em; }
+.article p { flex: 1; font-size: 15px; line-height: 24px; color: var(--grey); }
+.article-foot { display: flex; justify-content: space-between; align-items: center; font-weight: 500; color: var(--blue); }
+.article-foot span:first-child { font-size: 15px; line-height: 1.3; }
+.article-foot span:last-child { font-size: 20px; line-height: 1; }
+.thumb { background-size: cover; background-repeat: no-repeat; background-color: #1a2942; }
+.t1 { background-image: url("assets/insight-1.jpg"); background-position: 50% 62%; }
+.t2 { background-image: url("assets/insight-2.jpg"); background-position: 50% 55%; }
+.t3 { background-image: url("assets/insight-3.jpg"); background-position: 50% 78%; }
+
+/* neste steg */
+.next { background: var(--navy); color: #fff; padding: 88px 0; }
+.next .label { margin-bottom: 20px; }
+.next h2 { font-size: 40px; line-height: 1.12; max-width: 760px; }
+.next p { margin-top: 20px; max-width: 600px; font-size: 17px; line-height: 1.55; color: rgba(255,255,255,.78); }
+.next .btn { margin-top: 32px; }
+
+/* footer */
+.footer { background: var(--navy-deep); color: #fff; padding: 56px 0; }
+.footer .wrap { display: flex; gap: 96px; align-items: flex-start; }
+.footer-brand { flex: 1; }
+.footer-brand p { margin-top: 24px; max-width: 480px; font-size: 16px; line-height: 1.55; color: rgba(255,255,255,.78); }
+.footer-brand .city { margin-top: 24px; font-size: 16px; line-height: 1.5; color: rgba(255,255,255,.78); }
+.footer-col { flex: none; display: flex; flex-direction: column; gap: 16px; font-size: 16px; line-height: 1.5; }
+.footer-col.nav-col { width: 240px; }
+.footer-col.contact-col { width: 320px; }
+.footer-col strong { font-weight: 500; }
+.footer-col a { color: rgba(255,255,255,.78); text-decoration: underline; text-underline-offset: 3px; }
+.footer-col a:hover { color: #fff; }
+.footer-col .copy { color: rgba(255,255,255,.5); }
+
+/* scroll reveal */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1);
+}
+.js .reveal.in { opacity: 1; transform: none; }
+.js .btn.reveal {
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1), background .2s, color .2s, border-color .2s;
+}
+.hero-body { animation: rise 1s cubic-bezier(.2,.6,.2,1) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal, .js .btn.reveal { opacity: 1; transform: none; transition: none; }
+  .hero-body { animation: none; }
+  .cue::after { animation: none; }
+}
+
+@media (max-width: 1100px) {
+  :root { --pad: 40px; }
+  .method .wrap, .about-grid { flex-direction: column; gap: 48px; }
+  .method-text { width: 100%; }
+  .method .media { flex: none; height: 420px; }
+  .people { grid-template-columns: repeat(3, 1fr); row-gap: 40px; }
+  .banner img { width: 70%; }
+  .banner::after { left: 30%; width: 38%; }
+  .footer .wrap { flex-wrap: wrap; gap: 56px; }
+  .footer-brand { flex-basis: 100%; }
+}
+
+@media (max-width: 760px) {
+  :root { --pad: 20px; }
+  .nav { height: 88px; }
+  .nav-links { gap: 18px; font-size: 14px; }
+  .nav-links a:first-child { display: none; }
+  .nav-cta { width: 108px; height: 34px; }
+  .hero { height: auto; min-height: 640px; padding: 140px 0 80px; }
+  .hero h1 { font-size: 36px; }
+  .hero p { font-size: 18px; }
+  .services h2 { font-size: 36px; }
+  .h2, .about h2, .next h2 { font-size: 32px; }
+  .strip { flex-direction: column; }
+  .cell + .cell { border-left: 0; border-top: 1px solid var(--line); }
+  .focus .cell + .cell { border-top: 1px solid rgba(255,255,255,.22); }
+  .method, .services, .focus, .insights, .next { padding-top: 64px; padding-bottom: 64px; }
+  .banner { height: auto; }
+  .banner img { position: static; width: 100%; height: 260px; }
+  .banner::after { display: none; }
+  .banner-text { position: static; transform: none; width: auto; max-width: none; padding: 32px 24px; }
+  .people { grid-template-columns: repeat(2, 1fr); }
+  .articles { grid-template-columns: 1fr; }
+  .footer-col.nav-col, .footer-col.contact-col { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<div class="bar" id="bar">
+  <nav class="nav">
+    <a href="#"><img class="logo white" src="assets/logo.png" alt="Foresight Consulting"></a>
+    <div class="nav-links">
+      <a href="#tjenester">Tjenester</a>
+      <a href="#om-oss">Om oss</a>
+      <a class="nav-cta" href="#kontakt">Ta kontakt</a>
+    </div>
+  </nav>
+</div>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <a class="cue" href="#tjenester" aria-label="Scroll ned"></a>
+  <div class="hero-body">
+    <h1>Tall som gjør det lettere å ta riktige beslutninger</h1>
+    <p>Foresight hjelper ledere i SMB med å få bedre oversikt, tydeligere handlingsrom og et beslutningsgrunnlag som&nbsp;holder når situasjonen blir krevende.</p>
+    <a class="btn btn-white" href="#tjenester">Se våre tjenester<span class="arr-hover">→</span></a>
+  </div>
+</header>
+
+<main>
+
+<section class="services" id="tjenester">
+  <div class="wrap">
+    <div class="intro">
+      <div class="label">Tjenester</div>
+      <h2 class="h2">En tydeligere front betyr ikke mindre substans.</h2>
+      <p class="lead">Tjenestene er ulike i form og omfang, men fellesnevneren er alltid bedre styringsinformasjon, klarere konsekvensforståelse og tryggere beslutninger for ledelsen.</p>
+    </div>
+
+    <div class="situations">
+      <span class="overline">Tre situasjoner</span>
+      <div class="strip">
+        <article class="cell">
+          <span class="num">01</span>
+          <h3>Likviditet og handlingsrom</h3>
+          <p>Når tallene ikke gir deg ro i magen, hjelper vi deg å se hva som faktisk driver presset og hvilke grep som gir rom til å handle</p>
+          <a class="more" href="#">Les mer <span class="arr">→</span></a>
+        </article>
+        <article class="cell">
+          <span class="num">02</span>
+          <h3>Styrearbeid og beslutningsgrunnlag</h3>
+          <p>Vi gjør strategiske diskusjoner mer konkrete med prognoser, scenarier og tall som holder i styrerommet.</p>
+          <a class="more" href="#">Les mer <span class="arr">→</span></a>
+        </article>
+        <article class="cell">
+          <span class="num">03</span>
+          <h3>Vekst, endring og finansiering</h3>
+          <p>Når virksomheten er i bevegelse, trenger du mer enn rapportering. Du trenger oversikt over konsekvenser, timing og prioriteringer.</p>
+          <a class="more" href="#">Les mer <span class="arr">→</span></a>
+        </article>
+      </div>
+    </div>
+
+    <a class="btn btn-outline" href="#">Tjenester <span class="arr">→</span></a>
+  </div>
+</section>
+
+<section class="method" id="arbeidsform">
+  <div class="wrap">
+    <div class="method-text">
+      <div class="label">Arbeidsform</div>
+      <h2 class="h2">Vi begynner med situasjonen og bygger strukturen rundt den.</h2>
+      <p class="lead">Foresight går inn når ledelsen trenger bedre oversikt, sterkere prioriteringer og finansielle vurderinger som er tett koblet til det som faktisk skjer i virksomheten.</p>
+      <ul class="principles">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1e498b" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          <span>Vi begynner med situasjonen, ikke med standardpakken.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1e498b" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          <span>Vi kobler strategi, drift og tallgrunnlag i samme samtale.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1e498b" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          <span>Vi er tydelige, anvendelige og tilgjengelige for ledelsen.</span>
+        </li>
+      </ul>
+    </div>
+    <div class="media">
+      <img src="assets/arbeidsform.png" alt="Rådgivere i møte rundt en laptop">
+    </div>
+  </div>
+</section>
+
+<section class="focus">
+  <div class="wrap">
+    <div class="label light">Fokusområde</div>
+    <div class="strip">
+      <article class="cell">
+        <h3>Prognoser og styring</h3>
+        <p>Foresight bygger beslutningsgrunnlag som oversetter strategi til praktiske prioriteringer, scenarier og oppfølging.</p>
+        <a class="more" href="#">Les mer <span class="arr">→</span></a>
+      </article>
+      <article class="cell">
+        <h3>Likviditet og lønnsomhet</h3>
+        <p>Vi hjelper ledere med å forstå kontantbildet, avdekke presspunkter og skape et tydeligere handlingsrom.</p>
+        <a class="more" href="#">Les mer <span class="arr">→</span></a>
+      </article>
+      <article class="cell">
+        <h3>Transaksjon, due diligence og endring</h3>
+        <p>Ved vekst, eierskifte eller ny fase bidrar vi med struktur, rådgivning og finansiell trygghet i prosessen.</p>
+        <a class="more" href="#">Les mer <span class="arr">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="about-wrap">
+  <section class="about" id="om-oss">
+    <div class="wrap">
+      <div class="label">Om oss</div>
+      <div class="about-grid">
+        <h2 class="h2">Finansiell kompetanse uten den stive konsulentfølelsen</h2>
+        <div>
+          <p class="lead">Foresight ble etablert for å gi virksomheter bedre oversikt, tryggere prioriteringer og mer anvendelig finansiell innsikt i kritiske perioder. Vi er tydelige, jordnære og nyttige for ledelsen, og starter alltid med virksomhetens situasjon.</p>
+          <a class="btn btn-solid" href="#">Les mer <span class="arr">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><hr class="rule"></div>
+
+  <section class="team">
+    <div class="wrap">
+      <div class="banner">
+        <img src="assets/group.png" alt="Rådgiverne i Foresight">
+        <div class="banner-text">
+          <div class="label light">Menneskene bak</div>
+          <h2 class="h2" style="color:#fff">Senior støtte fra folk du faktisk skal jobbe med.</h2>
+          <p class="lead">Erfaringen spenner fra økonomistyring og styrearbeid til endring, vekst og krevende virksomhetssituasjoner. Ambisjonen er alltid å være tydelig, tilgjengelig og nyttig for ledelsen.</p>
+          <a class="more more-light" href="#">Les mer <span class="arr">→</span></a>
+        </div>
+      </div>
+
+      <div class="people">
+        <a class="person" href="#"><div class="photo"><img src="assets/portrait-1.png" alt=""><div class="info"><p>30 års erfaring fra økonomi- og finansroller, de siste 20 årene på CFO-nivå.</p><span class="more">Se profil <span class="arr">→</span></span></div></div><div class="pmeta"><span class="pname">Reinert Engelschiøn Vigtel</span></div></a>
+        <a class="person" href="#"><div class="photo"><img src="assets/portrait-2.png" alt=""><div class="info"><p>Autorisert regnskapsfører med 25 års erfaring fra regnskapsbyråer og fintech.</p><span class="more">Se profil <span class="arr">→</span></span></div></div><div class="pmeta"><span class="pname">Frode Kølner</span></div></a>
+        <a class="person" href="#"><div class="photo"><img src="assets/portrait-3.png" alt=""><div class="info"><p>30 års erfaring fra revisjon og regnskap, særlig innen skatt og M&A.</p><span class="more">Se profil <span class="arr">→</span></span></div></div><div class="pmeta"><span class="pname">Robert Henden</span></div></a>
+        <a class="person" href="#"><div class="photo"><img src="assets/portrait-4.png" alt=""><div class="info"><p>30+ års erfaring fra senior finansroller, blant annet som CFO og fra KPMG CFO Advisory.</p><span class="more">Se profil <span class="arr">→</span></span></div></div><div class="pmeta"><span class="pname">Ola Gjersøyen</span></div></a>
+        <a class="person" href="#"><div class="photo"><img src="assets/portrait-5.png" alt=""><div class="info"><p>25 års erfaring innen regnskap, controlling, CFO-arbeid og ledelse.</p><span class="more">Se profil <span class="arr">→</span></span></div></div><div class="pmeta"><span class="pname">Hilde Sørø</span></div></a>
+        <a class="person" href="#"><div class="photo"><img src="assets/portrait-6.png" alt=""><div class="info"><p>Master i finans fra BI Oslo og flere års erfaring med regnskap for SMB.</p><span class="more">Se profil <span class="arr">→</span></span></div></div><div class="pmeta"><span class="pname">Martin E. Håkensmoen</span></div></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="insights">
+  <div class="wrap">
+    <div class="insights-head">
+      <div class="label">Innsikt</div>
+      <h2 class="h2">Praktisk innsikt for situasjoner som krever mer enn historiske tall</h2>
+    </div>
+
+    <div class="articles">
+      <a class="article" href="#">
+        <div class="thumb t1"></div>
+        <div class="article-body">
+          <span class="meta">20. mars 2026 · Likviditet</span>
+          <h3>Når likviditeten strammer seg, trenger du mer enn magefølelse</h3>
+          <p>Hvordan virksomheter kan få bedre oversikt over handlingsrom, prioriteringer og tempo når likviditeten blir et reelt ledertema.</p>
+          <div class="article-foot"><span>Les artikkelen</span><span class="arr">→</span></div>
+        </div>
+      </a>
+      <a class="article" href="#">
+        <div class="thumb t2"></div>
+        <div class="article-body">
+          <span class="meta">14. mars 2026 · Styrearbeid</span>
+          <h3>Når styret trenger bedre tallgrunnlag, holder det ikke med historiske rapporter</h3>
+          <p>Styret trenger ikke flere tall for tallenes skyld. De trenger et bedre grunnlag for å vurdere retning, risiko og handlingsalternativer.</p>
+          <div class="article-foot"><span>Les artikkelen</span><span class="arr">→</span></div>
+        </div>
+      </a>
+      <a class="article" href="#">
+        <div class="thumb t3"></div>
+        <div class="article-body">
+          <span class="meta">8. mars 2026 · Økonomistyring</span>
+          <h3>Regnskap er ikke det samme som økonomistyring</h3>
+          <p>Mange virksomheter oppdager for sent at god rapportering ikke alene gir et godt grunnlag for ledelsesbeslutninger.</p>
+          <div class="article-foot"><span>Les artikkelen</span><span class="arr">→</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="next" id="kontakt">
+  <div class="wrap">
+    <div class="label light">Neste steg</div>
+    <h2 class="h2">Trenger du bedre oversikt for de neste beslutningene?</h2>
+    <p>Ta kontakt for en konfidensiell samtale om likviditet, styregrunnlag, prognoser eller en situasjon du trenger å forstå raskere.</p>
+    <a class="btn btn-white" href="mailto:rev@foresight-consulting.no">Ta kontakt</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <img class="logo white" src="assets/logo.png" alt="Foresight Consulting">
+      <p>Strategisk finansiell medspiller for ledere som trenger bedre oversikt, tryggere beslutningsgrunnlag og mer handlingsrom.</p>
+      <div class="city">Oslo</div>
+    </div>
+    <div class="footer-col nav-col">
+      <strong>Navigasjon</strong>
+      <a href="#tjenester">Tjenester</a>
+      <a href="#om-oss">Om Foresight</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="#">Personvern</a>
+    </div>
+    <div class="footer-col contact-col">
+      <strong>Kontakt</strong>
+      <a href="tel:+4792099363">+47 920 99 363</a>
+      <a href="mailto:rev@foresight-consulting.no">rev@foresight-consulting.no</a>
+      <a href="#">LinkedIn</a>
+      <span class="copy">© 2026 Foresight Consulting AS</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// header state on scroll
+(function () {
+  var bar = document.getElementById('bar');
+  function onScroll() { bar.classList.toggle('scrolled', window.scrollY > 40); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+
+// blocks rise into place on scroll
+(function () {
+  var items = document.querySelectorAll([
+    '.services .intro', '.services .situations', '.services .btn',
+    '.method > .wrap', '.focus > .wrap', '.about > .wrap',
+    '.banner', '.people',
+    '.insights-head', '.articles',
+    '.next > .wrap', '.footer > .wrap'
+  ].join(','));
+  items.forEach(function (el) { el.classList.add('reveal'); });
+
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    items.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>
