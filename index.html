@@ -12,8 +12,8 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230e274f'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' text-anchor='middle' fill='%23fff'%3EF%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<script>document.documentElement.classList.add('js')</script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t;}catch(e){}</script>
 <style>
 :root {
   --blue: #1e498b;
@@ -24,15 +24,18 @@
   --tint: #ecf1f9;
   --line: #c7d6eb;
   --hair: #dee5f2;
+  --dark: rgba(7,15,32,.55);
+  --dark-navy: rgba(14,39,79,.62);
   --sky: #9ebded;
   --pad: 80px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+button, input, textarea, select { font-family: inherit; }
 body {
   margin: 0;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: "Hanken Grotesk", system-ui, sans-serif;
   font-weight: 400;
   color: var(--ink);
   background: #fff;
@@ -59,14 +62,14 @@ section[id] { scroll-margin-top: 76px; }
 /* buttons */
 .btn {
   display: inline-flex; align-items: center;
-  padding: 14px 28px;
+  padding: 14px 28px; border-radius: 999px;
   font-size: 16px; font-weight: 500; line-height: 1.3;
   transition: background .2s, color .2s, border-color .2s;
 }
 .btn-outline { border: 1.5px solid var(--blue); color: var(--blue); }
 .btn-outline:hover { background: var(--blue); color: #fff; }
-.btn-solid { background: var(--blue); color: #fff; padding: 12px 24px; }
-.btn-solid:hover { background: var(--navy); }
+.btn-solid { background: #13284f; color: #fff; padding: 12px 24px; }
+.btn-solid:hover { background: #1f3d73; }
 .btn-white { background: #fff; color: var(--navy); }
 .btn-white:hover { background: var(--sky); }
 .arr-hover { display: inline-block; max-width: 0; margin-left: 0; opacity: 0; overflow: hidden; white-space: nowrap; vertical-align: bottom; transition: max-width .3s ease, margin-left .3s ease, opacity .3s ease; }
@@ -80,28 +83,40 @@ section[id] { scroll-margin-top: 76px; }
   min-height: 620px;
   max-height: 1100px;
   color: #fff;
-  background: #0b1424;
-  display: flex; align-items: center; justify-content: flex-start;
+  display: flex; align-items: center; justify-content: center;
   overflow: hidden;
   isolation: isolate;
+  background: #fff;
 }
-.hero-bg {
-  position: absolute; inset: 0; z-index: -1;
-  background: url("assets/hero2.jpg") 0% 52% / 128% auto no-repeat;
-  filter: contrast(1.05) saturate(.9);
+.page-bg {
+  position: absolute; inset: 0; z-index: -1; overflow: hidden;
+  background: #05080f;
 }
-/* fine grain over the photo */
+/* the drawing, almost black-and-white */
+.page-bg::before {
+  content: ""; position: absolute; inset: 0;
+  background: url("assets/hero.jpg") 100% 50% / max(145%, 150svh) auto no-repeat;
+  transform: scaleX(-1);
+  filter: saturate(.85) brightness(.74) contrast(1.05);
+}
+/* fine grain */
+.page-bg::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: .6; mix-blend-mode: screen;
+}
+/* a little blue over the whole picture */
 .hero::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: .16; mix-blend-mode: overlay;
+  background: #1e498b; mix-blend-mode: color; opacity: .14;
 }
+/* dark in the top right corner for the menu, and a little on the left behind the text */
 .hero::before {
   content: "";
-  position: absolute; inset: 0;
+  position: absolute; inset: 0; pointer-events: none;
   background:
-    linear-gradient(to right, rgba(6,12,26,.96) 0%, rgba(8,18,38,.9) 30%, rgba(14,39,79,.42) 52%, rgba(30,73,139,.13) 78%, rgba(30,73,139,.2) 100%),
-    linear-gradient(to bottom, rgba(5,8,14,.72) 0%, rgba(5,8,14,.4) 12%, rgba(5,8,14,0) 28%);
+    radial-gradient(ellipse 62% 34% at 100% 0%, rgba(5,11,24,.9) 0%, rgba(5,11,24,.72) 35%, rgba(5,11,24,.3) 70%, rgba(5,11,24,0) 100%),
+    linear-gradient(90deg, rgba(5,11,24,.55) 0%, rgba(5,11,24,.35) 40%, rgba(5,11,24,0) 70%);
 }
 .bar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 50;
@@ -110,8 +125,7 @@ section[id] { scroll-margin-top: 76px; }
   transition: background .3s, border-color .3s, backdrop-filter .3s;
 }
 .bar.scrolled {
-  background: rgba(9,24,51,.9);
-  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  background: #0c1626;
   border-bottom-color: rgba(255,255,255,.08);
 }
 .nav {
@@ -121,9 +135,9 @@ section[id] { scroll-margin-top: 76px; }
   transition: height .3s;
 }
 .bar.scrolled .nav { height: 76px; }
-.logo { width: 128px; height: 65px; object-fit: cover; }
-.bar.scrolled .logo { width: 108px; height: 55px; }
-.logo { transition: width .3s, height: .3s; }
+.logo { width: 116px; height: auto; }
+.bar.scrolled .logo { width: 100px; }
+.logo { transition: width .3s; }
 .logo.white { filter: brightness(0) invert(1); }
 .nav-links { display: flex; align-items: center; gap: 36px; font-size: 15px; font-weight: 500; line-height: 1.3; }
 .nav-links a:not(.nav-cta) { position: relative; padding: 6px 0; }
@@ -135,23 +149,30 @@ section[id] { scroll-margin-top: 76px; }
 .nav-cta {
   width: 124px; height: 38px;
   display: flex; align-items: center; justify-content: center;
-  border: 1.5px solid #fff;
+  border: 1.5px solid #fff; border-radius: 999px;
   transition: background .2s, color .2s;
 }
 .nav-cta:hover { background: #fff; color: var(--navy); }
-.cue { position: absolute; z-index: 1; left: var(--pad); bottom: 28px; width: 1px; height: 56px; background: rgba(255,255,255,.28); overflow: hidden; }
-.cue::after { content: ""; position: absolute; left: 0; top: -20px; width: 1px; height: 20px; background: #fff; animation: cue 2.2s ease-in-out infinite; }
-@keyframes cue { to { transform: translateY(76px); } }
-.hero-body { position: relative; z-index: 1; text-align: left; align-self: center; width: 100%; max-width: 1512px; padding: 0 var(--pad) 170px; }
-.hero h1 { font-size: 52px; font-weight: 500; line-height: 1.1; letter-spacing: -0.025em; max-width: 600px; margin: 0; }
-.hero p { font-size: 19px; line-height: 1.62; width: 540px; max-width: 100%; margin: 24px 0 36px; color: rgba(255,255,255,.88); }
+.theme-toggle { width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; padding: 0; margin-left: -12px; background: none; color: #fff; border: 1.5px solid #fff; border-radius: 50%; cursor: pointer; transition: background .2s, color .2s; }
+.theme-toggle:hover { background: #fff; color: var(--navy); }
+.theme-toggle svg { width: 18px; height: 18px; }
+.theme-toggle .i-sun { display: none; }
+[data-theme="dark"] .theme-toggle .i-sun { display: block; }
+[data-theme="dark"] .theme-toggle .i-moon { display: none; }
+.hero-body { position: relative; z-index: 1; text-align: left; width: 100%; max-width: 1512px; padding: 0 var(--pad) 110px; }
+.eyebrow { margin: 0 0 18px; font-size: 18px; font-weight: 500; line-height: 1.3; letter-spacing: .02em; color: #e3eaf6; }
+.hero h1 { max-width: none; margin: 0; font-size: clamp(38px, 4.8vw, 68px); font-weight: 500; line-height: 1.08; letter-spacing: -0.03em; color: #fff; }
+.hero p { font-size: 20px; line-height: 1.6; font-weight: 400; max-width: 600px; margin: 30px 0 38px; color: #fff; text-wrap: balance; }
+.hero .btn-white { background: #3b6fc4; color: #fff; padding: 16px 35px; font-size: 17px; font-weight: 500; }
+.hero .btn-white:hover { background: #4e82d6; }
 
 /* tjenester */
 .services { background: var(--tint); padding: 72px 0 80px; }
-.services .intro > * + * { margin-top: 20px; }
-.services h2 { font-size: 46px; }
-.services .lead { max-width: 560px; }
-.situations { margin-top: 56px; }
+.services .intro { max-width: 860px; margin: 0 0 64px; }
+.services .intro > * + * { margin-top: 24px; }
+.services h2 { font-size: 52px; line-height: 1.1; letter-spacing: -0.025em; font-weight: 400; }
+.services .lead { max-width: 620px; font-size: 19px; line-height: 1.6; color: var(--grey); }
+.situations { margin-top: 0; }
 .overline {
   display: block; margin-bottom: 20px;
   font-size: 14px; font-weight: 500; line-height: 1.3;
@@ -162,7 +183,6 @@ section[id] { scroll-margin-top: 76px; }
 .cell + .cell { border-left: 1px solid var(--line); }
 .cell { transition: background .25s; }
 .services .cell:hover { background: #f7f9fd; }
-.focus .cell:hover { background: rgba(255,255,255,.04); }
 .cell .num { font-size: 14px; font-weight: 500; line-height: 1.3; letter-spacing: .04em; color: var(--blue); }
 .cell h3 { font-size: 20px; font-weight: 500; line-height: 1.3; letter-spacing: -0.01em; }
 .cell p { flex: 1; font-size: 16px; line-height: 25px; color: var(--grey); }
@@ -174,23 +194,31 @@ section[id] { scroll-margin-top: 76px; }
 
 /* arbeidsform */
 .method { padding: 72px 0; }
-.method .wrap { display: flex; align-items: stretch; gap: 96px; }
-.method-text { width: 720px; flex: none; }
+.method .wrap { display: flex; align-items: center; gap: 96px; }
+.method-text { flex: 1; min-width: 0; max-width: 720px; }
 .method-text > * + * { margin-top: 20px; }
+.method h2 { font-size: 44px; line-height: 1.12; letter-spacing: -0.02em; }
 .principles { padding-top: 16px; }
 .principles li { display: flex; gap: 14px; padding: 18px 0; font-size: 17px; line-height: 1.5; }
 .principles li:not(:last-child) { border-bottom: 1px solid var(--hair); }
 .principles svg { flex: none; width: 24px; height: 24px; }
-.method .media { position: relative; flex: 1; min-width: 0; }
-.method .media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.method .media { flex: none; width: 460px; }
+.method .media { position: relative; isolation: isolate; }
+.method .media img { display: block; width: 100%; height: auto; filter: saturate(.9) contrast(1.03) brightness(1); }
+/* navy tint that darkens a little and pulls the photo towards the site colours */
+.method .media::before { content: ""; position: absolute; inset: 0; background: #1e498b; mix-blend-mode: multiply; opacity: .2; pointer-events: none; }
+/* grain */
+.method .media::after { content: ""; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); mix-blend-mode: screen; opacity: .3; pointer-events: none; }
 
 /* fokus */
-.focus { background: var(--navy); padding: 72px 0 88px; }
-.focus .label { margin-bottom: 32px; }
-.focus .strip { background: none; border-color: rgba(255,255,255,.22); }
-.focus .cell { gap: 20px; border-color: rgba(255,255,255,.22); }
-.focus .cell h3 { color: #fff; }
-.focus .cell p { color: rgba(255,255,255,.72); }
+.focus { color: #fff; background: var(--navy); padding: 72px 0 88px; }
+.focus h2 { font-size: 44px; line-height: 1.05; letter-spacing: -0.03em; font-weight: 300; margin-bottom: 40px; }
+.focus .strip { flex-direction: column; background: none; border: 0; border-top: 1px solid rgba(255,255,255,.22); }
+.focus .cell { flex: none; display: grid; grid-template-columns: 5fr 6fr; gap: 64px; align-items: start; padding: 32px 0; border: 0; border-bottom: 1px solid rgba(255,255,255,.22); }
+.focus .cell + .cell { border-left: 0; }
+.focus .cell:hover { background: none; }
+.focus .cell h3 { color: #fff; font-size: 19px; font-weight: 500; line-height: 1.3; letter-spacing: -0.005em; }
+.focus .cell p { flex: none; font-size: 16px; line-height: 1.6; color: rgba(255,255,255,.72); max-width: 520px; }
 .focus .more { color: var(--sky); }
 .banner-text .more { display: inline-block; color: var(--sky); }
 .banner-text .more:hover { color: #fff; }
@@ -205,7 +233,16 @@ section[id] { scroll-margin-top: 76px; }
 .about .lead { margin-bottom: 28px; }
 .rule { border: 0; border-top: 1px solid #d1def0; margin: 0 auto; max-width: 1352px; }
 .team { padding: 56px 0 88px; }
-.banner { position: relative; height: 420px; background: var(--navy); overflow: hidden; }
+.banner { display: block; position: relative; height: 420px; background: #0a1731; overflow: hidden; transition: transform .4s cubic-bezier(.2,.7,.3,1), box-shadow .4s ease; }
+.banner:hover, .banner:focus-visible, .js .banner.reveal.in:hover, .js .banner.reveal.in:focus-visible { transform: scale(1.004); box-shadow: 0 28px 56px -24px rgba(14,39,79,.5); z-index: 1; }
+.js .banner.reveal.in { transition: opacity .7s ease, transform .4s cubic-bezier(.2,.7,.3,1), box-shadow .4s ease; }
+.banner:hover .arr { transform: translateX(4px); }
+.banner:hover .more { color: #fff; }
+.banner { isolation: isolate; }
+.banner img { filter: saturate(.9) contrast(1.03) brightness(1); }
+/* navy tint + grain over the photo */
+.banner::before { content: ""; position: absolute; top: 0; right: 0; width: 52%; height: 100%; background: #1e498b; mix-blend-mode: multiply; opacity: .2; pointer-events: none; z-index: 1; }
+.banner-fx { position: absolute; top: 0; right: 0; width: 52%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); mix-blend-mode: screen; opacity: .3; pointer-events: none; z-index: 1; }
 .banner img {
   position: absolute; top: 0; right: 0;
   width: 52%; height: 100%;
@@ -213,10 +250,11 @@ section[id] { scroll-margin-top: 76px; }
 }
 .banner::after {
   content: ""; position: absolute; top: 0; bottom: 0; left: 44%; width: 12%;
-  background: linear-gradient(90deg, var(--navy) 0%, var(--navy) 35%, rgba(14,39,79,0) 100%);
+  background: linear-gradient(90deg, #0a1731 0%, #0a1731 35%, rgba(10,23,49,0) 100%);
+  z-index: 1;
 }
 .banner-text {
-  position: absolute; z-index: 1; left: 64px; top: 50%; transform: translateY(-50%);
+  position: absolute; z-index: 2; left: 64px; top: 50%; transform: translateY(-50%);
   width: 500px; max-width: calc(100% - 128px); color: #fff;
 }
 .banner-text > * + * { margin-top: 20px; }
@@ -252,10 +290,12 @@ section[id] { scroll-margin-top: 76px; }
 .insights { padding: 88px 0; }
 .insights .label { margin-bottom: 20px; }
 .insights h2 { max-width: 760px; }
+.situations .articles { margin-top: 0; }
 .articles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
 .article { display: flex; flex-direction: column; background: #f6f7f9; transition: box-shadow .3s, transform .3s; }
-.article:hover { box-shadow: 0 18px 40px -22px rgba(14,39,79,.35); }
-.article h3 { transition: color .2s; }
+.article { position: relative; transition: box-shadow .35s ease, transform .35s cubic-bezier(.2,.7,.3,1), background .3s; }
+.article:hover, .article:focus-visible { transform: scale(1.015); z-index: 1; box-shadow: 0 24px 48px -20px rgba(14,39,79,.4); }
+.article h3 { color: var(--blue); transition: color .2s; }
 .article:hover h3 { color: var(--blue); }
 .article .thumb { height: 190px; overflow: hidden; }
 .article-body { flex: 1; display: flex; flex-direction: column; gap: 14px; padding: 32px; }
@@ -266,7 +306,11 @@ section[id] { scroll-margin-top: 76px; }
 .article-foot span:first-child { font-size: 15px; line-height: 1.3; }
 .article-foot span:last-child { font-size: 20px; line-height: 1; }
 .thumb { background-size: cover; background-repeat: no-repeat; background-color: #1a2942; }
+.thumb { filter: grayscale(1); transition: filter .5s ease; }
+.article:hover .thumb, .article:focus-visible .thumb { filter: grayscale(0); }
 .t1 { background-image: url("assets/insight-1.jpg"); background-position: 50% 62%; }
+.s1 { background-image: url("assets/situation-1.jpg"); background-position: 40% 50%; filter: none; }
+.s2 { background-image: url("assets/situation-office.jpg"); background-position: 50% 55%; filter: none; }
 .t2 { background-image: url("assets/insight-2.jpg"); background-position: 50% 55%; }
 .t3 { background-image: url("assets/insight-3.jpg"); background-position: 50% 78%; }
 
@@ -291,6 +335,26 @@ section[id] { scroll-margin-top: 76px; }
 .footer-col a:hover { color: #fff; }
 .footer-col .copy { color: rgba(255,255,255,.5); }
 
+/* dark theme */
+[data-theme="dark"] { --grey: rgba(255,255,255,.7); --line: rgba(255,255,255,.18); --hair: rgba(255,255,255,.14); color-scheme: dark; }
+[data-theme="dark"] body { color: #fff; background: #070f20; }
+[data-theme="dark"] .label { color: var(--sky); }
+[data-theme="dark"] .btn-outline { border-color: var(--sky); color: var(--sky); }
+[data-theme="dark"] .btn-solid:hover { background: #2a5aa8; }
+[data-theme="dark"] .services { background: rgba(5,11,24,.9); }
+[data-theme="dark"] .services .lead { color: rgba(255,255,255,.72); }
+[data-theme="dark"] .strip { background: rgba(255,255,255,.03); }
+[data-theme="dark"] .services .cell:hover { background: rgba(255,255,255,.05); }
+[data-theme="dark"] .cell .num, [data-theme="dark"] .more { color: var(--sky); }
+[data-theme="dark"] .method { background: #0a1426; }
+[data-theme="dark"] .principles svg { stroke: var(--sky); }
+[data-theme="dark"] .about-wrap { background: #0a1426; }
+[data-theme="dark"] .rule { border-top-color: var(--line); }
+[data-theme="dark"] .article { background: rgba(255,255,255,.05); border: 1px solid var(--hair); }
+[data-theme="dark"] .article:hover { background: rgba(255,255,255,.07); box-shadow: 0 24px 48px -20px rgba(0,0,0,.7); }
+[data-theme="dark"] .article h3, [data-theme="dark"] .article:hover h3 { color: var(--sky); }
+[data-theme="dark"] .article-foot { color: var(--sky); }
+
 /* scroll reveal */
 .js .reveal {
   opacity: 0;
@@ -304,18 +368,23 @@ section[id] { scroll-margin-top: 76px; }
 .hero-body { animation: rise 1s cubic-bezier(.2,.6,.2,1) both; }
 @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
+  .article:hover, .article:focus-visible, .banner:hover, .js .banner.reveal.in:hover { transform: none; }
   .js .reveal, .js .btn.reveal { opacity: 1; transform: none; transition: none; }
   .hero-body { animation: none; }
-  .cue::after { animation: none; }
 }
 
 @media (max-width: 1100px) {
+  .services h2, .method h2 { font-size: 38px; }
+  .focus h2 { font-size: 44px; }
+  .focus .cell { grid-template-columns: 1fr; gap: 14px; padding: 32px 0; }
+  .focus .cell h3 { font-size: 20px; }
   :root { --pad: 40px; }
-  .method .wrap, .about-grid { flex-direction: column; gap: 48px; }
-  .method-text { width: 100%; }
-  .method .media { flex: none; height: 420px; }
+  .about-grid { flex-direction: column; gap: 48px; }
+  .method .wrap { flex-direction: column; align-items: flex-start; gap: 48px; }
+  .method .media { width: 100%; max-width: 460px; }
   .people { grid-template-columns: repeat(3, 1fr); row-gap: 40px; }
-  .banner img { width: 70%; }
+  .hero::before { background: linear-gradient(rgba(5,11,24,.5), rgba(5,11,24,.5)), radial-gradient(ellipse 62% 34% at 100% 0%, rgba(5,11,24,.9) 0%, rgba(5,11,24,0) 100%); }
+  .banner img, .banner::before, .banner-fx { width: 70%; }
   .banner::after { left: 30%; width: 38%; }
   .footer .wrap { flex-wrap: wrap; gap: 56px; }
   .footer-brand { flex-basis: 100%; }
@@ -327,22 +396,42 @@ section[id] { scroll-margin-top: 76px; }
   .nav-links { gap: 18px; font-size: 14px; }
   .nav-links a:first-child { display: none; }
   .nav-cta { width: 108px; height: 34px; }
+  .theme-toggle { width: 34px; height: 34px; margin-left: 0; }
   .hero { height: auto; min-height: 640px; padding: 140px 0 80px; }
-  .hero h1 { font-size: 36px; }
-  .hero p { font-size: 18px; }
-  .services h2 { font-size: 36px; }
+  .br-d { display: none; }
+  .services h2, .method h2 { font-size: 32px; }
+  .focus h2 { font-size: 34px; }
+  .services .intro { margin-bottom: 40px; }
   .h2, .about h2, .next h2 { font-size: 32px; }
   .strip { flex-direction: column; }
   .cell + .cell { border-left: 0; border-top: 1px solid var(--line); }
-  .focus .cell + .cell { border-top: 1px solid rgba(255,255,255,.22); }
   .method, .services, .focus, .insights, .next { padding-top: 64px; padding-bottom: 64px; }
   .banner { height: auto; }
   .banner img { position: static; width: 100%; height: 260px; }
+  .banner::before, .banner-fx { width: 100%; height: 260px; }
   .banner::after { display: none; }
   .banner-text { position: static; transform: none; width: auto; max-width: none; padding: 32px 24px; }
   .people { grid-template-columns: repeat(2, 1fr); }
-  .articles { grid-template-columns: 1fr; }
   .footer-col.nav-col, .footer-col.contact-col { width: 100%; }
+}
+@media (max-width: 900px) {
+  .articles { grid-template-columns: 1fr; }
+  .hero h1 { max-width: none; }
+}
+
+@media (max-width: 520px) {
+  .nav-links { gap: 12px; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .nav-cta { width: auto; padding: 0 16px; height: 34px; font-size: 14px; }
+  .logo { width: 100px; }
+  .bar.scrolled .logo { width: 90px; }
+  .hero { padding: 120px 0 64px; min-height: 600px; }
+  .hero p { font-size: 17px; }
+  .hero .btn-white { padding: 14px 28px; font-size: 16px; }
+  .people { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .photo, .photo img { height: 200px; }
+  .banner-text { padding: 28px 20px; }
+  .footer .wrap { gap: 40px; }
 }
 </style>
 </head>
@@ -350,22 +439,26 @@ section[id] { scroll-margin-top: 76px; }
 
 <div class="bar" id="bar">
   <nav class="nav">
-    <a href="#"><img class="logo white" src="assets/logo.png" alt="Foresight Consulting"></a>
+    <a href="#"><img class="logo white" src="assets/logo-line.png" alt="Foresight Consulting"></a>
     <div class="nav-links">
       <a href="#tjenester">Tjenester</a>
       <a href="#om-oss">Om oss</a>
       <a class="nav-cta" href="#kontakt">Ta kontakt</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Bytt til mørk modus" title="Bytt tema">
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
     </div>
   </nav>
 </div>
 
 <header class="hero">
-  <div class="hero-bg"></div>
-  <a class="cue" href="#tjenester" aria-label="Scroll ned"></a>
+  <div class="page-bg" aria-hidden="true"></div>
   <div class="hero-body">
-    <h1>Tall som gjør det lettere å ta riktige beslutninger</h1>
+    <div class="eyebrow">Rådgivning for SMB</div>
+    <h1>Tall som gjør det lettere<br class="br-d"> å ta riktige beslutninger</h1>
     <p>Foresight hjelper ledere i SMB med å få bedre oversikt, tydeligere handlingsrom og et beslutningsgrunnlag som&nbsp;holder når situasjonen blir krevende.</p>
-    <a class="btn btn-white" href="#tjenester">Se våre tjenester<span class="arr-hover">→</span></a>
+    <a class="btn btn-white" href="#tjenester">Se våre tjenester</a>
   </div>
 </header>
 
@@ -374,43 +467,49 @@ section[id] { scroll-margin-top: 76px; }
 <section class="services" id="tjenester">
   <div class="wrap">
     <div class="intro">
-      <div class="label">Tjenester</div>
       <h2 class="h2">En tydeligere front betyr ikke mindre substans.</h2>
       <p class="lead">Tjenestene er ulike i form og omfang, men fellesnevneren er alltid bedre styringsinformasjon, klarere konsekvensforståelse og tryggere beslutninger for ledelsen.</p>
     </div>
 
     <div class="situations">
-      <span class="overline">Tre situasjoner</span>
-      <div class="strip">
-        <article class="cell">
-          <span class="num">01</span>
-          <h3>Likviditet og handlingsrom</h3>
-          <p>Når tallene ikke gir deg ro i magen, hjelper vi deg å se hva som faktisk driver presset og hvilke grep som gir rom til å handle</p>
-          <a class="more" href="#">Les mer <span class="arr">→</span></a>
-        </article>
-        <article class="cell">
-          <span class="num">02</span>
-          <h3>Styrearbeid og beslutningsgrunnlag</h3>
-          <p>Vi gjør strategiske diskusjoner mer konkrete med prognoser, scenarier og tall som holder i styrerommet.</p>
-          <a class="more" href="#">Les mer <span class="arr">→</span></a>
-        </article>
-        <article class="cell">
-          <span class="num">03</span>
-          <h3>Vekst, endring og finansiering</h3>
-          <p>Når virksomheten er i bevegelse, trenger du mer enn rapportering. Du trenger oversikt over konsekvenser, timing og prioriteringer.</p>
-          <a class="more" href="#">Les mer <span class="arr">→</span></a>
-        </article>
+      <div class="articles">
+        <a class="article" href="#">
+          <div class="thumb s1"></div>
+          <div class="article-body">
+            <span class="meta">Likviditet</span>
+            <h3>Likviditet og handlingsrom</h3>
+            <p>Når tallene ikke gir deg ro i magen, hjelper vi deg å se hva som faktisk driver presset og hvilke grep som gir rom til å handle</p>
+            <div class="article-foot"><span>Les mer</span><span class="arr">→</span></div>
+          </div>
+        </a>
+        <a class="article" href="#">
+          <div class="thumb s2"></div>
+          <div class="article-body">
+            <span class="meta">Styrearbeid</span>
+            <h3>Styrearbeid og beslutningsgrunnlag</h3>
+            <p>Vi gjør strategiske diskusjoner mer konkrete med prognoser, scenarier og tall som holder i styrerommet.</p>
+            <div class="article-foot"><span>Les mer</span><span class="arr">→</span></div>
+          </div>
+        </a>
+        <a class="article" href="#">
+          <div class="thumb t3"></div>
+          <div class="article-body">
+            <span class="meta">Vekst</span>
+            <h3>Vekst, endring og finansiering</h3>
+            <p>Når virksomheten er i bevegelse, trenger du mer enn rapportering. Du trenger oversikt over konsekvenser, timing og prioriteringer.</p>
+            <div class="article-foot"><span>Les mer</span><span class="arr">→</span></div>
+          </div>
+        </a>
       </div>
     </div>
 
-    <a class="btn btn-outline" href="#">Tjenester <span class="arr">→</span></a>
+    <a class="btn btn-solid" href="#">Se alle tjenester<span class="arr-hover">→</span></a>
   </div>
 </section>
 
 <section class="method" id="arbeidsform">
   <div class="wrap">
     <div class="method-text">
-      <div class="label">Arbeidsform</div>
       <h2 class="h2">Vi begynner med situasjonen og bygger strukturen rundt den.</h2>
       <p class="lead">Foresight går inn når ledelsen trenger bedre oversikt, sterkere prioriteringer og finansielle vurderinger som er tett koblet til det som faktisk skjer i virksomheten.</p>
       <ul class="principles">
@@ -436,22 +535,19 @@ section[id] { scroll-margin-top: 76px; }
 
 <section class="focus">
   <div class="wrap">
-    <div class="label light">Fokusområde</div>
+    <h2 class="h2">Våre fokusområder</h2>
     <div class="strip">
       <article class="cell">
         <h3>Prognoser og styring</h3>
         <p>Foresight bygger beslutningsgrunnlag som oversetter strategi til praktiske prioriteringer, scenarier og oppfølging.</p>
-        <a class="more" href="#">Les mer <span class="arr">→</span></a>
       </article>
       <article class="cell">
         <h3>Likviditet og lønnsomhet</h3>
         <p>Vi hjelper ledere med å forstå kontantbildet, avdekke presspunkter og skape et tydeligere handlingsrom.</p>
-        <a class="more" href="#">Les mer <span class="arr">→</span></a>
       </article>
       <article class="cell">
         <h3>Transaksjon, due diligence og endring</h3>
         <p>Ved vekst, eierskifte eller ny fase bidrar vi med struktur, rådgivning og finansiell trygghet i prosessen.</p>
-        <a class="more" href="#">Les mer <span class="arr">→</span></a>
       </article>
     </div>
   </div>
@@ -475,15 +571,16 @@ section[id] { scroll-margin-top: 76px; }
 
   <section class="team">
     <div class="wrap">
-      <div class="banner">
+      <a class="banner" href="#">
         <img src="assets/group.png" alt="Rådgiverne i Foresight">
+        <span class="banner-fx" aria-hidden="true"></span>
         <div class="banner-text">
           <div class="label light">Menneskene bak</div>
           <h2 class="h2" style="color:#fff">Senior støtte fra folk du faktisk skal jobbe med.</h2>
           <p class="lead">Erfaringen spenner fra økonomistyring og styrearbeid til endring, vekst og krevende virksomhetssituasjoner. Ambisjonen er alltid å være tydelig, tilgjengelig og nyttig for ledelsen.</p>
-          <a class="more more-light" href="#">Les mer <span class="arr">→</span></a>
+          <span class="more more-light">Les mer <span class="arr">→</span></span>
         </div>
-      </div>
+      </a>
 
       <div class="people">
         <a class="person" href="#"><div class="photo"><img src="assets/portrait-1.png" alt=""><div class="info"><p>30 års erfaring fra økonomi- og finansroller, de siste 20 årene på CFO-nivå.</p><span class="more">Se profil <span class="arr">→</span></span></div></div><div class="pmeta"><span class="pname">Reinert Engelschiøn Vigtel</span></div></a>
@@ -550,7 +647,7 @@ section[id] { scroll-margin-top: 76px; }
 <footer class="footer">
   <div class="wrap">
     <div class="footer-brand">
-      <img class="logo white" src="assets/logo.png" alt="Foresight Consulting">
+      <img class="logo white" src="assets/logo-line.png" alt="Foresight Consulting">
       <p>Strategisk finansiell medspiller for ledere som trenger bedre oversikt, tryggere beslutningsgrunnlag og mer handlingsrom.</p>
       <div class="city">Oslo</div>
     </div>
@@ -572,6 +669,22 @@ section[id] { scroll-margin-top: 76px; }
 </footer>
 
 <script>
+// light / dark theme
+(function () {
+  var root = document.documentElement, btn = document.getElementById('themeToggle');
+  function label() {
+    var dark = root.dataset.theme === 'dark';
+    btn.setAttribute('aria-label', dark ? 'Bytt til lys modus' : 'Bytt til mørk modus');
+  }
+  label();
+  btn.addEventListener('click', function () {
+    var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    label();
+  });
+})();
+
 // header state on scroll
 (function () {
   var bar = document.getElementById('bar');
