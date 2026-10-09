@@ -49,7 +49,7 @@ img { display: block; }
 a:focus-visible, .btn:focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; }
 h1, h2, h3 { text-wrap: balance; }
 p { text-wrap: pretty; }
-section[id] { scroll-margin-top: 76px; }
+section[id] { scroll-margin-top: 24px; }
 
 .wrap { max-width: 1512px; margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
 
@@ -95,31 +95,29 @@ section[id] { scroll-margin-top: 76px; }
 /* the drawing, almost black-and-white */
 .page-bg::before {
   content: ""; position: absolute; inset: 0;
-  background: url("assets/hero.jpg") 100% 50% / max(145%, 150svh) auto no-repeat;
-  transform: scaleX(-1);
-  filter: saturate(.85) brightness(.74) contrast(1.05);
+  background: url("assets/hero-fjord.jpg") 50% 60% / cover no-repeat;
+  filter: grayscale(.8) brightness(.5) contrast(1.15);
 }
 /* fine grain */
 .page-bg::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: .6; mix-blend-mode: screen;
+  opacity: .42; mix-blend-mode: screen;
 }
 /* a little blue over the whole picture */
 .hero::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: #1e498b; mix-blend-mode: color; opacity: .14;
+  background: #2a5fc4; mix-blend-mode: color; opacity: .16;
 }
-/* dark in the top right corner for the menu, and a little on the left behind the text */
+/* darker sides */
 .hero::before {
-  content: "";
-  position: absolute; inset: 0; pointer-events: none;
+  content: ""; position: absolute; inset: 0; pointer-events: none;
   background:
-    radial-gradient(ellipse 62% 34% at 100% 0%, rgba(5,11,24,.9) 0%, rgba(5,11,24,.72) 35%, rgba(5,11,24,.3) 70%, rgba(5,11,24,0) 100%),
-    linear-gradient(90deg, rgba(5,11,24,.55) 0%, rgba(5,11,24,.35) 40%, rgba(5,11,24,0) 70%);
+    linear-gradient(90deg, rgba(3,6,12,.62) 0%, rgba(3,6,12,.3) 18%, rgba(3,6,12,0) 34%, rgba(3,6,12,0) 66%, rgba(3,6,12,.3) 82%, rgba(3,6,12,.62) 100%),
+    radial-gradient(ellipse 72% 62% at 50% 48%, rgba(72,104,160,.42) 0%, rgba(72,104,160,.3) 40%, rgba(72,104,160,0) 80%);
 }
 .bar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  position: absolute; top: 0; left: 0; right: 0; z-index: 50;
   color: #fff;
   border-bottom: 1px solid transparent;
   transition: background .3s, border-color .3s, backdrop-filter .3s;
@@ -159,10 +157,10 @@ section[id] { scroll-margin-top: 76px; }
 .theme-toggle .i-sun { display: none; }
 [data-theme="dark"] .theme-toggle .i-sun { display: block; }
 [data-theme="dark"] .theme-toggle .i-moon { display: none; }
-.hero-body { position: relative; z-index: 1; text-align: left; width: 100%; max-width: 1512px; padding: 0 var(--pad) 110px; }
-.eyebrow { margin: 0 0 18px; font-size: 18px; font-weight: 500; line-height: 1.3; letter-spacing: .02em; color: #e3eaf6; }
-.hero h1 { max-width: none; margin: 0; font-size: clamp(38px, 4.8vw, 68px); font-weight: 500; line-height: 1.08; letter-spacing: -0.03em; color: #fff; }
-.hero p { font-size: 20px; line-height: 1.6; font-weight: 400; max-width: 600px; margin: 30px 0 38px; color: #fff; text-wrap: balance; }
+.hero-body { position: relative; z-index: 1; text-align: center; width: 100%; padding: 40px var(--pad) 110px; }
+.eyebrow { margin: 0 0 17px; font-size: 18px; font-weight: 500; line-height: 1.3; letter-spacing: .02em; color: #e3eaf6; }
+.hero h1 { max-width: 15em; margin: 0 auto; font-size: clamp(37px, 5vw, 72px); font-weight: 500; line-height: 1.05; letter-spacing: -0.035em; }
+.hero p { font-size: 19px; line-height: 1.5; font-weight: 400; max-width: 530px; margin: 39px auto 43px; color: rgba(255,255,255,.94); text-wrap: balance; }
 .hero .btn-white { background: #3b6fc4; color: #fff; padding: 16px 35px; font-size: 17px; font-weight: 500; }
 .hero .btn-white:hover { background: #4e82d6; }
 
@@ -383,7 +381,6 @@ section[id] { scroll-margin-top: 76px; }
   .method .wrap { flex-direction: column; align-items: flex-start; gap: 48px; }
   .method .media { width: 100%; max-width: 460px; }
   .people { grid-template-columns: repeat(3, 1fr); row-gap: 40px; }
-  .hero::before { background: linear-gradient(rgba(5,11,24,.5), rgba(5,11,24,.5)), radial-gradient(ellipse 62% 34% at 100% 0%, rgba(5,11,24,.9) 0%, rgba(5,11,24,0) 100%); }
   .banner img, .banner::before, .banner-fx { width: 70%; }
   .banner::after { left: 30%; width: 38%; }
   .footer .wrap { flex-wrap: wrap; gap: 56px; }
@@ -412,26 +409,8 @@ section[id] { scroll-margin-top: 76px; }
   .banner::after { display: none; }
   .banner-text { position: static; transform: none; width: auto; max-width: none; padding: 32px 24px; }
   .people { grid-template-columns: repeat(2, 1fr); }
-  .footer-col.nav-col, .footer-col.contact-col { width: 100%; }
-}
-@media (max-width: 900px) {
   .articles { grid-template-columns: 1fr; }
-  .hero h1 { max-width: none; }
-}
-
-@media (max-width: 520px) {
-  .nav-links { gap: 12px; }
-  .nav-links a:not(.nav-cta) { display: none; }
-  .nav-cta { width: auto; padding: 0 16px; height: 34px; font-size: 14px; }
-  .logo { width: 100px; }
-  .bar.scrolled .logo { width: 90px; }
-  .hero { padding: 120px 0 64px; min-height: 600px; }
-  .hero p { font-size: 17px; }
-  .hero .btn-white { padding: 14px 28px; font-size: 16px; }
-  .people { grid-template-columns: 1fr 1fr; gap: 16px; }
-  .photo, .photo img { height: 200px; }
-  .banner-text { padding: 28px 20px; }
-  .footer .wrap { gap: 40px; }
+  .footer-col.nav-col, .footer-col.contact-col { width: 100%; }
 }
 </style>
 </head>
@@ -439,9 +418,9 @@ section[id] { scroll-margin-top: 76px; }
 
 <div class="bar" id="bar">
   <nav class="nav">
-    <a href="#"><img class="logo white" src="assets/logo-line.png" alt="Foresight Consulting"></a>
+    <a href="index.html"><img class="logo white" src="assets/logo-line.png" alt="Foresight Consulting"></a>
     <div class="nav-links">
-      <a href="fjord.html">Tjenester</a>
+      <a href="#tjenester">Tjenester</a>
       <a href="#om-oss">Om oss</a>
       <a class="nav-cta" href="#kontakt">Ta kontakt</a>
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Bytt til mørk modus" title="Bytt tema">
