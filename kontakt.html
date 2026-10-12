@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt – Foresight Consulting</title>
+<meta name="description" content="Ta kontakt med Foresight Consulting for en konfidensiell samtale om likviditet, styregrunnlag, prognoser eller en situasjon du trenger å forstå raskere.">
+<meta name="theme-color" content="#0e274f">
+<meta property="og:title" content="Kontakt – Foresight Consulting">
+<meta property="og:description" content="Strategisk finansiell medspiller for ledere som trenger bedre oversikt, tryggere beslutningsgrunnlag og mer handlingsrom.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230e274f'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' text-anchor='middle' fill='%23fff'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="bar" id="bar">
+  <nav class="nav">
+    <a href="index.html"><img class="logo" src="assets/logo-line.png" alt="Foresight Consulting"></a>
+    <div class="nav-links">
+      <a href="tjenester.html">Tjenester</a>
+      <a href="om-oss.html">Om oss</a>
+      <a class="nav-cta" href="kontakt.html">Ta kontakt</a>
+    </div>
+  </nav>
+</div>
+
+<main>
+
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-head">
+      <h1>Ta kontakt</h1>
+      <p class="lead">Fortell kort hva situasjonen gjelder, så tar en av rådgiverne kontakt for en konfidensiell samtale. Du trenger ikke ha et ferdig definert behov.</p>
+    </div>
+
+    <div class="contact-grid">
+      <form class="cform" id="cform" novalidate data-endpoint="">
+        <div class="frow two">
+          <div class="field">
+            <label for="f-navn">Navn</label>
+            <input id="f-navn" name="navn" type="text" autocomplete="name" required aria-describedby="e-navn">
+            <p class="ferr" id="e-navn">Skriv inn navnet ditt.</p>
+          </div>
+          <div class="field">
+            <label for="f-firma">Virksomhet <span class="opt">valgfritt</span></label>
+            <input id="f-firma" name="virksomhet" type="text" autocomplete="organization">
+          </div>
+        </div>
+        <div class="frow two">
+          <div class="field">
+            <label for="f-epost">E-post</label>
+            <input id="f-epost" name="epost" type="email" autocomplete="email" required aria-describedby="e-epost">
+            <p class="ferr" id="e-epost">Skriv inn en gyldig e-postadresse, for eksempel navn@firma.no.</p>
+          </div>
+          <div class="field">
+            <label for="f-tlf">Telefon <span class="opt">valgfritt</span></label>
+            <input id="f-tlf" name="telefon" type="tel" autocomplete="tel" inputmode="tel">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-melding">Kort om situasjonen</label>
+          <textarea id="f-melding" name="melding" rows="6" required aria-describedby="e-melding" placeholder="For eksempel: Vi trenger bedre oversikt over likviditeten de neste seks månedene før styremøtet i juni."></textarea>
+          <p class="ferr" id="e-melding">Skriv noen ord om hva du ønsker hjelp med.</p>
+        </div>
+
+        <div class="field">
+          <label for="f-radgiver">Ønsket rådgiver <span class="opt">valgfritt</span></label>
+          <div class="select">
+            <select id="f-radgiver" name="radgiver">
+              <option value="">Ingen preferanse</option>
+              <option value="reinert">Reinert Engelschiøn Vigtel</option>
+              <option value="frode">Frode Kølner</option>
+              <option value="robert">Robert Henden</option>
+              <option value="ola">Ola Gjersøyen</option>
+              <option value="hilde">Hilde Sørø</option>
+              <option value="martin">Martin E. Håkensmoen</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="consent"><input type="checkbox" name="samtykke" required aria-describedby="e-samtykke"><span>Jeg godtar at Foresight lagrer opplysningene for å besvare henvendelsen. Les <a href="#">personvernerklæringen</a>.</span></label>
+          <p class="ferr" id="e-samtykke">Du må godta dette før vi kan ta imot henvendelsen.</p>
+        </div>
+
+        <div class="fsend">
+          <button class="btn btn-solid" type="submit">Send henvendelse<span class="arr-hover">→</span></button>
+        </div>
+      </form>
+
+      <div class="csent" id="csent" hidden tabindex="-1">
+        <h2>Takk for henvendelsen</h2>
+        <p class="lead" id="csent-text">Vi har mottatt meldingen og tar kontakt så snart vi kan.</p>
+        <a class="more" href="index.html">Tilbake til forsiden <span class="arr">→</span></a>
+      </div>
+
+      <aside class="cside">
+        <h2>Direkte kontakt</h2>
+        <dl>
+          <div><dt>Telefon</dt><dd><a href="tel:+4792099363">920 99 363</a></dd></div>
+          <div><dt>E-post</dt><dd><a href="mailto:rev@foresight-consulting.no">rev@foresight-consulting.no</a></dd></div>
+          <div><dt>Kontor</dt><dd>Oslo</dd></div>
+        </dl>
+        <p class="cnote">Alle henvendelser behandles fortrolig.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <img class="logo white" src="assets/logo-line.png" alt="Foresight Consulting">
+      <p>Strategisk finansiell medspiller for ledere som trenger bedre oversikt, tryggere beslutningsgrunnlag og mer handlingsrom.</p>
+      <div class="city">Oslo</div>
+    </div>
+    <div class="footer-col nav-col">
+      <strong>Navigasjon</strong>
+      <a href="tjenester.html">Tjenester</a>
+      <a href="om-oss.html">Om Foresight</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="#">Personvern</a>
+    </div>
+    <div class="footer-col contact-col">
+      <strong>Kontakt</strong>
+      <a href="tel:+4792099363">+47 920 99 363</a>
+      <a href="mailto:rev@foresight-consulting.no">rev@foresight-consulting.no</a>
+      <a href="#">LinkedIn</a>
+      <span class="copy">© 2026 Foresight Consulting AS</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// header state on scroll
+(function () {
+  var bar = document.getElementById('bar');
+  function onScroll() { bar.classList.toggle('scrolled', window.scrollY > 40); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+
+// contact form: inline validation, then send
+(function () {
+  var form = document.getElementById('cform');
+  var done = document.getElementById('csent');
+  if (!form) return;
+  // kontakt.html?radgiver=frode picks the adviser
+  var who = new URLSearchParams(location.search).get('radgiver');
+  if (who) { var sel = form.radgiver; if ([].some.call(sel.options, function (o) { return o.value === who; })) sel.value = who; }
+
+  var fields = [].slice.call(form.querySelectorAll('[required]'));
+  function check(el) {
+    var ok = el.type === 'checkbox' ? el.checked : el.value.trim() !== '' && el.checkValidity();
+    el.closest('.field').classList.toggle('bad', !ok);
+    el.setAttribute('aria-invalid', ok ? 'false' : 'true');
+    return ok;
+  }
+  fields.forEach(function (el) {
+    el.addEventListener(el.type === 'checkbox' ? 'change' : 'blur', function () { if (el.closest('.field').classList.contains('bad') || el.value) check(el); });
+    el.addEventListener('input', function () { if (el.closest('.field').classList.contains('bad')) check(el); });
+  });
+
+  function finish(text) {
+    if (text) document.getElementById('csent-text').textContent = text;
+    form.hidden = true; done.hidden = false; done.focus();
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var bad = fields.filter(function (el) { return !check(el); });
+    if (bad.length) { bad[0].focus(); return; }
+    var d = new FormData(form);
+    var sel = form.radgiver.options[form.radgiver.selectedIndex];
+    var endpoint = form.dataset.endpoint;
+    if (endpoint) {
+      // a form service (Formspree, Netlify Forms or similar) goes in data-endpoint
+      var btn = form.querySelector('[type=submit]');
+      btn.disabled = true;
+      fetch(endpoint, { method: 'POST', body: d, headers: { Accept: 'application/json' } })
+        .then(function (r) { if (!r.ok) throw r; finish(); })
+        .catch(function () { btn.disabled = false; alert('Henvendelsen ble ikke sendt. Prøv igjen, eller send e-post til rev@foresight-consulting.no.'); });
+      return;
+    }
+    // no form service yet: open the visitor's e-mail with everything filled in
+    var lines = [
+      d.get('melding'), '',
+      'Navn: ' + d.get('navn'),
+      d.get('virksomhet') ? 'Virksomhet: ' + d.get('virksomhet') : '',
+      'E-post: ' + d.get('epost'),
+      d.get('telefon') ? 'Telefon: ' + d.get('telefon') : '',
+      sel.value ? 'Ønsket rådgiver: ' + sel.text : ''
+    ].filter(function (l, i) { return l !== '' || i === 1; });
+    location.href = 'mailto:rev@foresight-consulting.no?subject=' + encodeURIComponent('Henvendelse fra nettsiden' + (d.get('virksomhet') ? ', ' + d.get('virksomhet') : '')) + '&body=' + encodeURIComponent(lines.join('\n'));
+    finish('E-postprogrammet ditt åpnes med henvendelsen ferdig utfylt. Trykk send der, så tar vi kontakt så snart vi kan.');
+  });
+})();
+</script>
+</body>
+</html>
