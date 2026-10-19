@@ -22,7 +22,15 @@
   <nav class="nav">
     <a href="index.html"><img class="logo" src="assets/logo-line.png" alt="Foresight Consulting"></a>
     <div class="nav-links">
-      <a href="tjenester.html">Tjenester</a>
+      <div class="nav-drop">
+        <a href="tjenester.html" aria-haspopup="true">Tjenester<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3"/></svg></a>
+        <div class="nav-menu">
+          <a href="tjeneste-prognose.html">Prognose og rapportering</a>
+          <a href="tjeneste-likviditet.html">Likviditet</a>
+          <a href="tjeneste-transaksjoner.html">Transaksjoner</a>
+          <a href="tjeneste-styrearbeid.html">Styrearbeid</a>
+        </div>
+      </div>
       <a href="om-oss.html" aria-current="page">Om oss</a>
       <a class="nav-cta" href="kontakt.html">Ta kontakt</a>
     </div>
@@ -94,10 +102,6 @@
         <span class="photo"><img src="assets/portrait-3.png" alt=""><span class="info"><span class="more">Se profil <span class="arr">→</span></span></span></span>
         <span class="pmeta"><span class="pname">Robert Henden</span></span>
       </button>
-      <button class="person" type="button" data-id="ola" data-name="Ola Gjersøyen" aria-haspopup="dialog">
-        <span class="photo"><img src="assets/portrait-4.png" alt=""><span class="info"><span class="more">Se profil <span class="arr">→</span></span></span></span>
-        <span class="pmeta"><span class="pname">Ola Gjersøyen</span></span>
-      </button>
       <button class="person" type="button" data-id="hilde" data-name="Hilde Sørø" aria-haspopup="dialog">
         <span class="photo"><img src="assets/portrait-5.png" alt=""><span class="info"><span class="more">Se profil <span class="arr">→</span></span></span></span>
         <span class="pmeta"><span class="pname">Hilde Sørø</span></span>
@@ -112,7 +116,6 @@
       <div class="pdetail"><p>Reinert har mer enn 30 års erfaring fra økonomi- og finansroller i privateide selskaper; 20 av disse årene på CFO-nivå. Han har erfaring fra bransjer som prosessindustri, shipping, ingeniørrådgivning, satcom, regnskaps- og finanstjenester og medisinsk utstyr.</p><span class="overline">Erfaring og styrker</span><ul><li>Økonomisk rapportering</li><li>Budsjettering og forecasting</li><li>Kontantstrømanalyser og cash forecasting</li><li>Investeringsanalyser</li><li>Verdivurderinger og impairment-testing</li><li>Treasury, risikoanalyse og risikoreduksjon</li></ul></div>
       <div class="pdetail"><p>Frode er autorisert regnskapsfører og har 25 års erfaring med å starte, drive, strukturere og utvikle regnskapsbyråer og fintech-selskaper. Han har også vært rådgiver for små og mellomstore virksomheter og oppstartsselskaper i vekst.</p><span class="overline">Erfaring og styrker</span><ul><li>Valg og implementering av ERP-systemer</li><li>Organisering og strukturering av drift</li><li>Salg og kjøp av virksomheter og DD-prosesser</li><li>Skalering opp og ned av virksomheten</li><li>Strategisk rådgivning</li></ul></div>
       <div class="pdetail"><p>Robert er autorisert regnskapsfører og har 30 års erfaring fra revisjon og regnskapstjenester. Han er særlig sterk i spørsmål som involverer skatt, moms, virksomhetssammenslutninger, fusjoner og oppkjøp, med vekt på hvordan juridiske oppsett kan struktureres i komplekse prosesser.</p><span class="overline">Erfaring og styrker</span><ul><li>Skatteplanlegging</li><li>Fusjoner og oppkjøp</li><li>Strukturering og eierskap</li><li>Regnskapsanalyse</li><li>Virksomhetssammenslutninger</li></ul></div>
-      <div class="pdetail"><p>Ola har over 30 års erfaring fra ledende økonomiroller i norske og internasjonale virksomheter, og har jobbet på tvers av blant annet IT, energi, varehandel, eiendom og bank. Han har vært interim CFO, hatt faste CFO- og økonomidirektørroller og kommer også fra KPMG CFO Advisory.</p><span class="overline">Erfaring og styrker</span><ul><li>Interimledelse</li><li>Forbedringsarbeid innen økonomistyring og rapportering</li><li>Regnskapsavslutning og styrerapportering</li><li>Prognoser, kontantstrøm og arbeidskapital</li><li>Prosjektledelse og endringsarbeid</li><li>Operasjonalisering av strategi og KPI-arbeid</li></ul></div>
       <div class="pdetail"><p>Hilde har 25 års erfaring innen regnskap, controlling, CFO-arbeid og ledelse i større selskaper, inkludert regnskapsbyrå. Hun har bred bransjeerfaring og særlig god kunnskap om skatt, MVA og regnskapslovgivning, og har bistått mange selskaper med både skattefunn, bærekraftsrapportering og ERP-endringer.</p><span class="overline">Erfaring og styrker</span><ul><li>Budsjettering og rapportering</li><li>Konsernregnskap</li><li>Skatt og MVA</li><li>Selskapstransaksjoner</li><li>ERP-systemer</li></ul></div>
       <div class="pdetail"><p>Martin er i sluttfasen av en MSc i Finance ved BI Handelshøyskole med spesialisering innen Asset Management. Ved siden av studiene har han flere års erfaring fra regnskapsbransjen som regnskapsfører for små og mellomstore bedrifter.</p><span class="overline">Erfaring og styrker</span><ul><li>Praktisk regnskapsforståelse</li><li>Finansiell modellering</li><li>Excel / R</li><li>Python</li><li>Data- og visualiseringsverktøy</li></ul></div>
     </div>
@@ -136,23 +139,22 @@
             <th scope="col"><button class="mx-person" type="button" data-open="0"><img src="assets/faces/face-1.png" alt=""><span>Reinert</span></button></th>
             <th scope="col"><button class="mx-person" type="button" data-open="1"><img src="assets/faces/face-2.png" alt=""><span>Frode</span></button></th>
             <th scope="col"><button class="mx-person" type="button" data-open="2"><img src="assets/faces/face-3.png" alt=""><span>Robert</span></button></th>
-            <th scope="col"><button class="mx-person" type="button" data-open="3"><img src="assets/faces/face-4.png" alt=""><span>Ola</span></button></th>
-            <th scope="col"><button class="mx-person" type="button" data-open="4"><img src="assets/faces/face-5.png" alt=""><span>Hilde</span></button></th>
-            <th scope="col"><button class="mx-person" type="button" data-open="5"><img src="assets/faces/face-6.png" alt=""><span>Martin</span></button></th>
+            <th scope="col"><button class="mx-person" type="button" data-open="3"><img src="assets/faces/face-5.png" alt=""><span>Hilde</span></button></th>
+            <th scope="col"><button class="mx-person" type="button" data-open="4"><img src="assets/faces/face-6.png" alt=""><span>Martin</span></button></th>
           </tr>
         </thead>
         <tbody>
-          <tr><th scope="row">Interim / fractional CFO</th><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td></tr>
-          <tr><th scope="row">Økonomistyring og ledelsesrapportering</th><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td></tr>
-          <tr><th scope="row">Budsjett, prognoser og finansiell modellering</th><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td></tr>
-          <tr><th scope="row">Likviditet, kontantstrøm og treasury</th><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td></tr>
-          <tr><th scope="row">Konsernregnskap, konsolidering og IFRS</th><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td></tr>
-          <tr><th scope="row">Transaksjoner, M&amp;A og due diligence</th><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td></tr>
-          <tr><th scope="row">Skatt, MVA og selskapsstruktur</th><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td></tr>
-          <tr><th scope="row">Regnskap og periodeavslutning</th><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td></tr>
-          <tr><th scope="row">ERP, systemvalg og automatisering</th><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td></tr>
-          <tr><th scope="row">Styrearbeid og beslutningsunderlag</th><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td></tr>
-          <tr><th scope="row">Verdivurdering og investeringsanalyse</th><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td></tr>
+          <tr><th scope="row">Interim / fractional CFO</th><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td></tr>
+          <tr><th scope="row">Økonomistyring og ledelsesrapportering</th><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td></tr>
+          <tr><th scope="row">Budsjett, prognoser og finansiell modellering</th><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td></tr>
+          <tr><th scope="row">Likviditet, kontantstrøm og treasury</th><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td></tr>
+          <tr><th scope="row">Konsernregnskap, konsolidering og IFRS</th><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td></tr>
+          <tr><th scope="row">Transaksjoner, M&amp;A og due diligence</th><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td></tr>
+          <tr><th scope="row">Skatt, MVA og selskapsstruktur</th><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td></tr>
+          <tr><th scope="row">Regnskap og periodeavslutning</th><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td></tr>
+          <tr><th scope="row">ERP, systemvalg og automatisering</th><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td></tr>
+          <tr><th scope="row">Styrearbeid og beslutningsunderlag</th><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk none"></span><span class="sr">Ikke primærområde</span></td></tr>
+          <tr><th scope="row">Verdivurdering og investeringsanalyse</th><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td><td><span class="mk half"></span><span class="sr">God erfaring</span></td><td><span class="mk full"></span><span class="sr">Kjerneområde</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -170,7 +172,7 @@
     <div class="matrix-head">
       <div class="label">Rådgiverne</div>
       <h2 class="h2">Erfaring og kompetanse, person for person</h2>
-      <p class="lead">Seks rådgivere med tyngdepunkt i økonomistyring, finans og transaksjoner. Vi settes sammen etter oppgaven, med én fast kontaktperson og resten av teamet tilgjengelig når saken krever det.</p>
+      <p class="lead">Fem rådgivere med tyngdepunkt i økonomistyring, finans og transaksjoner. Vi settes sammen etter oppgaven, med én fast kontaktperson og resten av teamet tilgjengelig når saken krever det.</p>
     </div>
 
     <div class="adv-layout">
@@ -258,32 +260,6 @@
           </details>
         </article>
 
-        <article class="adv" id="r-ola" data-name="Ola Gjersøyen" data-role="Partner" data-levels="full,full,full,full,full,full,half,half,none,half,full">
-          <div class="adv-top">
-            <img src="assets/portrait-4.png" alt="">
-            <div>
-              <p class="adv-role">Partner</p>
-              <h3>Ola Gjersøyen</h3>
-              <p class="adv-place">Oslo</p>
-            </div>
-          </div>
-          <p class="adv-intro">Ola er økonomileder med over 30 års erfaring fra hands-on roller i norske og internasjonale selskaper, og har gjennomført åtte interim CFO-oppdrag, flere av dem i PE-eide virksomheter. Han kom til Foresight i 2026 etter åtte år som Director i KPMG CFO Advisory. Styrken hans er å gå inn i en økonomifunksjon som ikke leverer godt nok, finne ut hva som faktisk mangler, og bygge prosessene, rapporteringen og teamet som skal til, ofte mens selskapet står midt i en fusjon, et eierskifte eller en vekstfase.</p>
-          <div class="adv-cols">
-            <div>
-              <h4 class="adv-h">Kjerneområder</h4>
-              <ul class="adv-key"><li>Interim CFO og interimledelse</li><li>Forbedring av økonomi- og virksomhetsstyring</li><li>Periodeavslutning og rapportering</li><li>Prognoser, modellutvikling og kontantstrøm</li></ul>
-            </div>
-            <div>
-            <h4 class="adv-h">Utvalgt erfaring</h4>
-            <ol class="adv-tl"><li><span>2026 –</span><span><strong>Partner</strong>, Foresight Consulting AS</span></li><li><span>2017 – 2025</span><span><strong>Director</strong>, KPMG CFO Advisory</span></li><li><span>2016 – 2017</span><span><strong>VP Finance &amp; Business Support</strong>, Enhanced Drilling AS</span></li><li><span>2013 – 2015</span><span><strong>CFO</strong>, Mediq Norge AS</span></li></ol>
-            </div>
-          </div>
-          <details class="adv-mx">
-            <summary>Kompetanseprofil</summary>
-            <ul><li><span>Interim / fractional CFO</span><span class="mk full"></span><span class="sr">Kjerneområde</span></li><li><span>Økonomistyring og ledelsesrapportering</span><span class="mk full"></span><span class="sr">Kjerneområde</span></li><li><span>Budsjett, prognoser og finansiell modellering</span><span class="mk full"></span><span class="sr">Kjerneområde</span></li><li><span>Likviditet, kontantstrøm og treasury</span><span class="mk full"></span><span class="sr">Kjerneområde</span></li><li><span>Konsernregnskap, konsolidering og IFRS</span><span class="mk full"></span><span class="sr">Kjerneområde</span></li><li><span>Transaksjoner, M&amp;A og due diligence</span><span class="mk full"></span><span class="sr">Kjerneområde</span></li><li><span>Skatt, MVA og selskapsstruktur</span><span class="mk half"></span><span class="sr">God erfaring</span></li><li><span>Regnskap og periodeavslutning</span><span class="mk half"></span><span class="sr">God erfaring</span></li><li><span>ERP, systemvalg og automatisering</span><span class="mk none"></span><span class="sr">Ikke primærområde</span></li><li><span>Styrearbeid og beslutningsunderlag</span><span class="mk half"></span><span class="sr">God erfaring</span></li><li><span>Verdivurdering og investeringsanalyse</span><span class="mk full"></span><span class="sr">Kjerneområde</span></li></ul>
-          </details>
-        </article>
-
         <article class="adv" id="r-hilde" data-name="Hilde Sørø" data-role="Senior økonomikonsulent" data-levels="full,full,full,full,full,half,full,full,full,half,half">
           <div class="adv-top">
             <img src="assets/portrait-5.png" alt="">
@@ -340,7 +316,7 @@
       <aside class="adv-rail" aria-label="Kompetanseprofil">
                 <p class="rail-name">Reinert Engelschiøn Vigtel</p>
         <p class="rail-role">Daglig leder og medgründer</p>
-        <div class="rail-ticks"><button type="button" data-go="r-reinert" aria-label="Reinert Engelschiøn Vigtel" aria-current="true"></button><button type="button" data-go="r-frode" aria-label="Frode Kølner"></button><button type="button" data-go="r-robert" aria-label="Robert Henden"></button><button type="button" data-go="r-ola" aria-label="Ola Gjersøyen"></button><button type="button" data-go="r-hilde" aria-label="Hilde Sørø"></button><button type="button" data-go="r-martin" aria-label="Martin E. Håkensmoen"></button></div>
+        <div class="rail-ticks"><button type="button" data-go="r-reinert" aria-label="Reinert Engelschiøn Vigtel" aria-current="true"></button><button type="button" data-go="r-frode" aria-label="Frode Kølner"></button><button type="button" data-go="r-robert" aria-label="Robert Henden"></button><button type="button" data-go="r-hilde" aria-label="Hilde Sørø"></button><button type="button" data-go="r-martin" aria-label="Martin E. Håkensmoen"></button></div>
         <ul class="rail-list"><li><span>Interim / fractional CFO</span><span class="mk full"></span><span class="sr">Kjerneområde</span></li><li><span>Økonomistyring og ledelsesrapportering</span><span class="mk full"></span><span class="sr">Kjerneområde</span></li><li><span>Budsjett, prognoser og finansiell modellering</span><span class="mk full"></span><span class="sr">Kjerneområde</span></li><li><span>Likviditet, kontantstrøm og treasury</span><span class="mk full"></span><span class="sr">Kjerneområde</span></li><li><span>Konsernregnskap, konsolidering og IFRS</span><span class="mk full"></span><span class="sr">Kjerneområde</span></li><li><span>Transaksjoner, M&amp;A og due diligence</span><span class="mk full"></span><span class="sr">Kjerneområde</span></li><li><span>Skatt, MVA og selskapsstruktur</span><span class="mk half"></span><span class="sr">God erfaring</span></li><li><span>Regnskap og periodeavslutning</span><span class="mk half"></span><span class="sr">God erfaring</span></li><li><span>ERP, systemvalg og automatisering</span><span class="mk none"></span><span class="sr">Ikke primærområde</span></li><li><span>Styrearbeid og beslutningsunderlag</span><span class="mk full"></span><span class="sr">Kjerneområde</span></li><li><span>Verdivurdering og investeringsanalyse</span><span class="mk full"></span><span class="sr">Kjerneområde</span></li></ul>
         <ul class="mx-legend">
           <li><span class="mk full"></span>Kjerneområde</li>

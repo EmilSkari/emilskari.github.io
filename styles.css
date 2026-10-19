@@ -102,6 +102,27 @@ section[id] { scroll-margin-top: 24px; }
   background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .25s;
 }
 .nav-links a:not(.nav-cta):hover::after { transform: scaleX(1); }
+/* tjenester dropdown: opens on hover and keyboard focus */
+.nav-drop { position: relative; }
+.nav-drop > a { display: inline-flex; align-items: center; gap: 6px; }
+.chev { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s; }
+.nav-drop:hover .chev, .nav-drop:focus-within .chev { transform: rotate(180deg); }
+.nav-menu {
+  position: absolute; top: 100%; left: -24px; padding-top: 14px;
+  min-width: 260px; display: flex; flex-direction: column;
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .2s, transform .2s, visibility .2s;
+}
+.nav-menu::before {
+  content: ""; position: absolute; inset: 14px 0 0; z-index: -1;
+  background: #fff; box-shadow: 0 24px 48px -20px rgba(14,39,79,.4);
+}
+.nav-drop:hover .nav-menu, .nav-drop:focus-within .nav-menu { opacity: 1; visibility: visible; transform: none; }
+.nav-links .nav-menu a { padding: 14px 24px; color: var(--navy); white-space: nowrap; transition: background .2s, color .2s; }
+.nav-links .nav-menu a:first-child { margin-top: 8px; }
+.nav-links .nav-menu a:last-child { margin-bottom: 8px; }
+.nav-links .nav-menu a::after { display: none; }
+.nav-links .nav-menu a:hover, .nav-links .nav-menu a:focus-visible { background: var(--tint); color: var(--blue); }
 .nav-cta {
   width: 124px; height: 38px;
   display: flex; align-items: center; justify-content: center;
@@ -194,6 +215,9 @@ section[id] { scroll-margin-top: 24px; }
 .team-head h2 { margin: 0 auto; color: #fff; }
 .team-head .lead { max-width: 600px; margin: 20px auto 0; color: rgba(255,255,255,.78); }
 .team .people { gap: 32px 24px; margin-top: 72px; }
+@media (min-width: 1101px) {
+  .team .people, .crew .people { grid-template-columns: repeat(5, 1fr); }
+}
 .team .photo { height: auto; aspect-ratio: 4 / 5; background: rgba(255,255,255,.06); }
 .team .photo img { object-position: 50% 30%; }
 .team-head .meet { display: inline-block; margin-top: 28px; color: var(--sky); }
@@ -254,6 +278,7 @@ section[id] { scroll-margin-top: 24px; }
 .s1 { background-image: url("assets/situation-1.jpg"); background-position: 40% 50%; filter: none; }
 .s2 { background-image: url("assets/situation-office.jpg"); background-position: 50% 55%; filter: none; }
 .s3 { background-image: url("assets/vekst.jpg"); background-position: 40% 60%; filter: none; }
+.s4 { background-image: url("assets/insight-2.jpg"); background-position: 50% 55%; filter: none; }
 .t2 { background-image: url("assets/insight-2.jpg"); background-position: 50% 55%; }
 .t3 { background-image: url("assets/insight-3.jpg"); background-position: 50% 78%; }
 
@@ -334,6 +359,9 @@ section[id] { scroll-margin-top: 24px; }
   .nav { height: 88px; }
   .nav-links { gap: 18px; font-size: 14px; }
   .nav-links a:not(.nav-cta) { display: none; }
+  /* mobil: Tjenester vises som vanlig lenke uten nedtrekksmeny */
+  .nav-links .nav-drop > a { display: inline-flex; }
+  .nav-drop .chev, .nav-drop .nav-menu { display: none; }
   .nav .logo { width: 124px; }
   .bar.scrolled .nav .logo { width: 108px; }
   .nav-cta { width: 108px; height: 34px; }
@@ -369,15 +397,34 @@ section[id] { scroll-margin-top: 24px; }
 .nav-links a[aria-current="page"]::after { transform: scaleX(1); }
 /* cut just above their heads, laptop kept at the bottom */
 .services-hero .hero-photo img { aspect-ratio: 618 / 640; object-fit: cover; object-position: 50% 100%; }
+/* undersider: teksten får mer plass, bildet en smalere kolonne */
+.page-hero .hero-body { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 80px; }
+.page-hero .hero-main p { max-width: 560px; }
 .page-hero .hero-photo { justify-self: end; width: min(100%, 500px); }
+/* tjeneste-undersider */
+.service-page-hero .hero-photo img { aspect-ratio: 5 / 6; object-fit: cover; }
+.crumb { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; font-size: 15px; font-weight: 500; color: var(--blue); }
+.crumb .arr { transition: transform .25s; }
+.crumb:hover .arr { transform: translateX(-4px); }
+.insights .articles { margin-top: 0; }
+/* forsiden: luft mellom innsikt-overskriften og artiklene */
+.insights-head + .articles { margin-top: 56px; }
 @media (max-width: 900px) {
+  .page-hero .hero-body { grid-template-columns: 1fr; gap: 56px; }
   .page-hero .hero-photo { justify-self: start; width: 100%; }
 }
-/* arbeidsområde: the three service cards, not links */
+/* arbeidsområde: the four service cards */
 .area .intro { max-width: 760px; }
 .area .label { margin-bottom: 20px; }
 .area .intro .lead { margin-top: 24px; }
 .article.plain:hover { transform: none; box-shadow: none; }
+.articles.four { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1100px) {
+  .articles.four { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  .articles.four { grid-template-columns: 1fr; }
+}
 /* når passer vi inn: heading on the left, the four situations on the right */
 .fit { background: #0a1731; color: #fff; padding: 96px 0; }
 .fit .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 96px; align-items: start; }
@@ -388,7 +435,16 @@ section[id] { scroll-margin-top: 24px; }
 /* slik tenker vi */
 .thinking { padding: 96px 0; }
 .thinking .label { margin-bottom: 20px; }
-.thinking .lead { margin-bottom: 28px; }
+.thinking .lead { margin-bottom: 0; }
+/* samme deling som «Når passer dette» over, så seksjonene står i linje */
+.thinking .about-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 96px; }
+/* to hvite seksjoner etter hverandre: en tynn strek i stedet for dobbel luft */
+.thinking:has(+ .insights) { padding-bottom: 72px; }
+.thinking + .insights { padding-top: 0; }
+.thinking + .insights .wrap::before { content: ""; display: block; border-top: 1px solid var(--line); margin-bottom: 72px; }
+@media (max-width: 1100px) {
+  .thinking .about-grid { grid-template-columns: 1fr; gap: 28px; }
+}
 @media (max-width: 1100px) {
   .fit .wrap { gap: 56px; }
 }
