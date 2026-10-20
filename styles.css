@@ -943,18 +943,6 @@ button:focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; }
 .area:not(.detail) + .fit .fit-list svg { stroke: var(--blue); }
 @media (max-width: 760px) { .area:not(.detail) + .fit { padding: 64px 0; } }
 
-/* Tjenester-siden: avrundede fliser innenfor innholdsbredden */
-.tiles { width: auto; margin-left: 0; padding: 0; gap: 20px; }
-.tile { border-radius: 24px; }
-.area:not(.detail) { padding-bottom: 0; }
-.services-hero .hero-photo img { border-radius: 24px; }
-
-/* Forsiden: avrundede hjørner som på tjenester-siden */
-.hero:not(.page-hero) .hero-photo img { border-radius: 24px; }
-.situations .article { border-radius: 20px; overflow: hidden; }
-.method .media img { border-radius: 24px; }
-.team .photo { border-radius: 16px; }
-.insights .article { border-radius: 20px; overflow: hidden; }
 .team .info { background: linear-gradient(to top, rgba(9,24,51,.88) 0%, rgba(9,24,51,.5) 32%, rgba(9,24,51,0) 62%); }
 
 /* Tjenester-siden: visualiseringene ser tegnet ut */
