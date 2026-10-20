@@ -799,18 +799,6 @@ button:focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; }
 }
 
 
-/* Hero: rådgiverne under knappen */
-.hero-team { display: inline-flex; align-items: center; gap: 16px; }
-.hero-team .faces { display: flex; padding-left: 12px; }
-.hero-team .faces img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; margin-left: -12px; border: 2px solid #fff; background: var(--tint); transition: margin .35s cubic-bezier(.2,.7,.3,1), transform .35s cubic-bezier(.2,.7,.3,1); }
-.hero-team:hover .faces img, .hero-team:focus-visible .faces img { margin-left: -6px; }
-.hero-team:hover .faces img:nth-child(odd), .hero-team:focus-visible .faces img:nth-child(odd) { transform: translateY(-2px); }
-.hero-team-text { display: flex; flex-direction: column; gap: 2px; }
-.hero-team-text small { font-size: 14px; line-height: 1.4; color: var(--grey); }
-.hero-team:hover .meet .arr { transform: translateX(4px); }
-[data-theme="dark"] .hero-team .faces img { border-color: #0a1426; }
-@media (prefers-reduced-motion: reduce) { .hero-team .faces img { transition: none; } }
-
 /* Tjenester-siden: hero fyller skjermen, større bilde */
 @media (min-width: 901px) {
   .services-hero { height: 92vh; height: 92svh; min-height: 560px; }
